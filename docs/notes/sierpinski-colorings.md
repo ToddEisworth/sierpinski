@@ -168,12 +168,42 @@ at Shelah's forcing construction.
     Thus, the splitting pattern is coded by the permutation
     $\langle1,2,0,3\rangle$.
 
+Think of the indices $0, \dots, n-1$ as arranged in a row, with gap $j$ lying between $j$ and $j+1$.  We deal with these gaps in the order $\tau(0),\dots,\tau(n-2)$.  At any stage, our work will have partitioned $n$ into consecutive blocks.  Each of these blocks will correspond to a cone meeting $A$, and at the start the cone associated with the trivial block $\{0,\dots, n-1\}$ will be all of $2^{\omega}$.
+
+At stage $i$, we let $j = \tau(i)$ and note that $j$ and $j+1$ lie in the same block because this particular gap has not been processed.  If $[u]$ is the cone associated with the block, then because $A\cap [u]$ has no isolated points we can find $v\supseteq u$ such that both
+
+$$A\cap[v^\frown 0]\neq\emptyset\text{ and }A\cap [v^\frown 1]\neq\emptyset,$$
+
+and $v$ is longer than every cone chosen previously.  We then split the current block between $j$ and $j+1$, and assigned $[v^\frown 0]$ to the left piece and $[v^\frown 1]$ to the right one.
+
+After $n-1$ stages all blocks are singletons, and we let $[u_j]$ be the cone associated to the singleton $\{j\}$.  If $v_i$ is the splitting node chosen at stage $i$, then 
+
+$$b_{\tau(i)}:=u_{\tau(i)}\wedge u_{\tau(i)+1}=v_i.$$
+
+Since we arranged $|v_i|<|v_{i+1}|$ we know
+
+$$b_{\tau(0)}\triangleleft \cdots\triangleleft b_{\tau(n-2)}.$$
+
+To finish the proof, we note that $A\cap [u_i]$ is a non-empty relatively open subset of $A$, hence infinite.  This means we can choose $x_i\in A\cap [u_i]$ for each $i<n$ in the order prescribed by the permutation $\sigma$.  In details, since $A=\{a_k:k<\omega\}$ is $\prec$-increasing and each $A\cap [u_i]$ is infinite, we can choose $k_0<k_1<cdots<k_{n-1}$ so that $a_{k_j}$ is in $A\cap [u_{\sigma(j)}]$.   If we set $x_{\sigma(j)}= a_{k_j}$ then $x_i\in A\cap [u_i]$ for each $i<n$ while
+
+$$x_{\sigma(0)}\prec\cdots\prec x_{\sigma(n-1)}.$$
+
+Thus, for $a=\{a_i:i<n\}$ we have $\sigma_a = \sigma$, and the choice of cones guarantees $\tau_a = \tau$.
+
+$$\tag*{$\square$}$$
+
+
 
 !!! corollary
 
     $$
     2^{\aleph_0}\nrightarrow[\aleph_1]^n_{n!(n-1)!}.
     $$
+    ---
+    Proof:
+    Any uncountable subset of $2^\omega$ will contain a countable dense-in-itself subset, and so the result follows immediately.
+
+    
 
 ## References
 
