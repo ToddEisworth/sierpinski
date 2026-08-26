@@ -1,0 +1,331 @@
+# Coherent Decision-making
+
+## The Setup
+
+Fix a $\mathbb P$-name for a coloring $\dot d:[2^\omega]^3\longrightarrow r$, where $r<\omega$. We assume that our construction
+ has supplied models $N_s$ for $s\in [B]^{\leq 3}$, corresponding supports
+
+$$
+b_s=N_s\cap\lambda,
+$$
+
+and isomorphisms $h_{s,t}\to N_s$, for finite $s,t\subseteq B$ of the same size, satisfying
+
+$$
+b_s\cap b_t=b_{s\,\cap\, t}.
+$$
+
+The isomorphisms commute with restrictions, are order-preserving from  $b_t$ onto $b_s$, and satisfy
+
+$$
+h_{s,t}(\dot d(t))=\dot d(s)
+$$
+
+whenever $s,t\in[B]^3$. 
+
+We write
+
+$$
+\mathbb P_s=\operatorname{Add}(\omega,b_s).
+$$
+
+Our supports are closed enough so that if $t\in[B]^3$ and $p\in\mathbb P_t$, then some $q\leq p$ in $\mathbb P_t$ decides $\dot d(t)$. 
+
+
+Finally, fix an injection
+
+$$
+F:B\longrightarrow 2^\omega.
+$$
+
+We think of $F(\alpha)$ as the **code of $\alpha$**.
+
+
+
+
+## Equivalence over $2^{<n}$
+
+Our notation follows that of [Sh:288] in this section.
+
+!!! definition "The families $I_n$"
+
+    For $n<\omega$, let
+
+    $$
+    I_n=\left\{s\in[B]^{< \omega}:
+        \alpha\neq\beta\in s
+        \Longrightarrow
+        F(\alpha)\restriction n\neq F(\beta)\restriction n
+        \right\}.
+    $$
+
+
+The above definition should be thought of by visualizing $n$ as the *resolution level* where we are analyzing our codes, and then $I_n$ is the collection of finite subsets of $2^{\omega}$ that are *resolved* at level $n$.
+
+
+Thus $I_n$ is closed under taking subsets, and the sequence $\langle I_n:n<\omega\rangle$ is increasing with $n$. 
+
+
+
+
+!!! definition "The equivalence relation $\equiv^n_F$"
+
+    For $s,t\in I_n$ of the same size, write
+
+    $$
+    s\equiv_F^n t
+    $$
+
+    if
+
+    $$
+    F\bigl(h_{s,t}(\alpha)\bigr)\restriction n
+    =F(\alpha)\restriction n
+    $$
+
+    for every $\alpha\in t$.
+
+Because the members of each $s\in I_n$ have distinct $n$-traces, an $n$-trace determines at most one vertex of $s$. This uniqueness is what makes the equivariant propagation below well defined.
+
+Coherent systems
+
+!!! definition "The class $R_n^{-}$"
+
+A member of $R_n^{-}$ is a system
+
+$$
+x=\langle p_s^x:s\in I_n\rangle
+$$
+
+satisfying the following conditions.
+
+1. For every $s\in I_n$,
+
+   $$
+   p_s^x\in\mathbb P_s.
+   $$
+
+2. If $u\subseteq s$ are in $I_n$, then
+
+   $$
+   p_s^x\restriction b_u=p_u^x.
+   $$
+
+3. If $s\equiv_F^n t$, then
+
+   $$
+   h_{s,t}(p_t^x)=p_s^x.
+   $$
+
+Condition 2 is the face-coherence requirement. By exactness of the supports, it is equivalent to
+
+$$
+p_s^x\restriction b_{s\cap t}
+=p_t^x\restriction b_{s\cap t}
+$$
+
+for all $s,t\in I_n$.
+
+!!! definition "The class $R_n$"
+
+A system $x\in R_n^{-}$ belongs to $R_n$ if, for every $t\in I_n\cap[B]^3$, the condition $p_t^x$ decides $\dot d(t)$. We write
+
+$$
+p_t^x\Vdash\dot d(t)=c_t^x,
+\qquad c_t^x<r.
+$$
+
+We call members of $R_n^{-}$ **coherent systems** and members of $R_n$ **decisive systems**.
+
+Equivariance and preservation of $\dot d$ imply that
+
+$$
+s\equiv_F^n t
+\quad\Longrightarrow\quad
+c_s^x=c_t^x
+$$
+
+whenever $x\in R_n$ and $s,t\in I_n\cap[B]^3$.
+
+!!! definition "Extension of systems"
+
+Suppose $x\in R_n^{-}$ and $y\in R_m^{-}$, where $n\leq m$. We write
+
+$$
+y\leq x
+$$
+
+if
+
+$$
+p_s^y\leq p_s^x
+$$
+
+for every $s\in I_n$.
+
+The basic extension facts
+
+!!! lemma "$D(\alpha)$: equivariant propagation"
+
+Suppose $x\in R_n^{-}$, $t\in I_n$, and
+
+$$
+q_t\leq p_t^x,
+\qquad q_t\in\mathbb P_t.
+$$
+
+Then there is $y\in R_n^{-}$ such that
+
+$$
+y\leq x
+\qquad\text{and}\qquad
+p_t^y=q_t.
+$$
+
+!!! proof
+
+For every $v\subseteq t$ and every $u\in I_n$ with $u\equiv_F^n v$, transport
+
+$$
+q_t\restriction b_v
+$$
+
+to $b_u$ using $h_{u,v}$. Add all these transported restrictions to the corresponding coordinates of $x$, and then close upward through the face diagram.
+
+If two transported pieces meet, their common support is indexed by the intersection of the corresponding faces. The uniqueness of vertices with a given $n$-trace shows that both transports induce the same map on this intersection. Hence the pieces agree there. Their unions are therefore Cohen conditions.
+
+The resulting system is coherent and equivariant. On the coordinate $t$, every added piece is already a restriction of $q_t$, so the resulting condition is exactly $q_t$.
+
+!!! lemma "$D(\beta)$: normalization over a finite face"
+
+Let $x\in R_n^{-}$ and let $a\in[B]^{\leq3}$. Then
+
+$$
+p^x[a]
+=\bigcup\left\{p_s^x:s\in I_n,\ s\subseteq a\right\}
+$$
+
+is a condition in $\mathbb P_a$.
+
+If $a\in I_n$, then
+
+$$
+p^x[a]=p_a^x.
+$$
+
+!!! proof
+
+There are only finitely many faces of $a$. If $s,t\subseteq a$ belong to $I_n$, then
+
+$$
+p_s^x\restriction b_{s\cap t}
+=p_t^x\restriction b_{s\cap t}.
+$$
+
+Since $b_s\cap b_t=b_{s\cap t}$, the finite union is a function and hence a Cohen condition. If $a\in I_n$, face coherence makes every term in the union a restriction of $p_a^x$.
+
+!!! lemma "$D(\gamma)$: persistence of decisions"
+
+Suppose $x\in R_n$, $y\in R_n^{-}$, and $y\leq x$. Then $y\in R_n$, and
+
+$$
+c_t^y=c_t^x
+$$
+
+for every $t\in I_n\cap[B]^3$.
+
+!!! proof
+
+For each such $t$, the condition $p_t^y$ strengthens $p_t^x$. Forcing decisions persist under strengthening.
+
+!!! theorem "$D(\delta)$: decisive refinement at a higher level"
+
+Suppose $x\in R_n^{-}$ and $n<m$. Then there is $y\in R_m$ such that
+
+$$
+y\leq x.
+$$
+
+!!! proof
+
+First define a system $z$ on $I_m$ by
+
+$$
+p_t^z=p^x[t]
+=\bigcup\left\{p_s^x:s\in I_n,\ s\subseteq t\right\}.
+$$
+
+By $D(\beta)$, each $p_t^z$ is a Cohen condition. Face coherence is immediate. If $t\equiv_F^m u$, then the correspondence between $t$ and $u$ carries their $n$-separated faces to equivalent $n$-separated faces. The equivariance of $x$ therefore gives
+
+$$
+h_{t,u}(p_u^z)=p_t^z.
+$$
+
+Thus $z\in R_m^{-}$ and $z\leq x$.
+
+There are only finitely many $\equiv_F^m$-classes in $I_m\cap[B]^3$, since the three distinct $m$-traces are chosen from the finite set $2^m$. Choose one representative from each realized class. Successively strengthen its coordinate to decide the corresponding value of $\dot d$, and apply $D(\alpha)$ after each choice. After finitely many applications, the resulting system $y$ belongs to $R_m$. By $D(\gamma)$, decisions made at earlier steps are preserved.
+
+Simultaneous absorption
+
+For later use, single-coordinate propagation must be replaced by a finite simultaneous form.
+
+!!! definition "Transport-coherent family"
+
+Let $x\in R_n^{-}$, let $A\subseteq I_n$ be finite, and suppose
+
+$$
+q_a\leq p_a^x,
+\qquad q_a\in\mathbb P_a
+$$
+
+for $a\in A$. Form all restrictions $q_a\restriction b_v$, where $v\subseteq a$, and all their images
+
+$$
+h_{u,v}(q_a\restriction b_v)
+$$
+
+for $u\equiv_F^n v$. We say that $\langle q_a:a\in A\rangle$ is **transport-coherent over $x$** if these transported conditions, together with the coordinates of $x$, agree on every common support.
+
+!!! theorem "Finite simultaneous absorption"
+
+Suppose $x\in R_n^{-}$, $A\subseteq I_n$ is finite, and $\langle q_a:a\in A\rangle$ is transport-coherent over $x$. Then there is $y\in R_n^{-}$ such that
+
+$$
+y\leq x
+$$
+
+and
+
+$$
+p_a^y\leq q_a
+$$
+
+for every $a\in A$.
+
+If $x\in R_n$, then $y\in R_n$ and all previously decided colors are unchanged.
+
+!!! proof
+
+Adjoin all transported restrictions simultaneously and take their union on each face. Transport coherence and exactness of the support system imply that every such union is a Cohen condition. The construction is closed under the maps $h_{s,t}$, so the resulting system is equivariant. A coordinate $p_a^y$ may contain transported information in addition to $q_a$, but it extends $q_a$, as required. The assertion about decisive systems follows from $D(\gamma)$.
+
+!!! remark "Why the simultaneous form is used"
+
+In the later game, Player II strengthens several proper faces at once. The legal-move requirement is precisely transport coherence. The simultaneous absorption theorem incorporates the entire move into one stronger equivariant system. No symmetry of the strengthened proper-face conditions is required beyond the stated transport-coherence equations.
+
+!!! warning "What has not been asserted"
+
+Arbitrary strengthenings of different faces need not be simultaneously absorbable. They must agree on overlaps after all required transports. Pairwise compatibility in the ambient Cohen forcing, without these transport equations, is not sufficient to produce an equivariant system.
+
+Role in the triples argument
+
+The four extension facts provide the local forcing operations used later:
+
+$D(\alpha)$ propagates one prescribed strengthening through its isomorphism type;
+
+$D(\beta)$ assembles the conditions already present below a new face;
+
+$D(\gamma)$ preserves decisions;
+
+$D(\delta)$ passes to a finer level and decides every triple type represented there;
+
+finite simultaneous absorption incorporates a coherent move on several proper faces.
