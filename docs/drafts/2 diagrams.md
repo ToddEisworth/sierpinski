@@ -105,45 +105,45 @@ manner does not add new forcing information, and it is adding organizational inf
 
 !!! lemma "Finite coherent strengthening"
 
-Let $\bar p\in\mathbb{C}[\bar b]$, let $A\subseteq W$, and suppose that
-$q_a\in\mathbb{C}(b_a)$, for $a\in A$, satisfy
+    Let $\bar p\in\mathbb{C}[\bar b]$, let $A\subseteq W$, and suppose that
+    $q_a\in\mathbb{C}(b_a)$, for $a\in A$, satisfy
 
-$$
-p_a\leq q_a
-\qquad(a\in A)
-\tag{S1}
-$$
+    $$
+    p_a\leq q_a
+    \qquad(a\in A)
+    \tag{S1}
+    $$
 
-and
+    and
 
-$$
-q_a\restriction(b_a\cap b_{a'})
-=
-q_{a'}\restriction(b_a\cap b_{a'})
-\qquad(a,a'\in A).
-\tag{S2}
-$$
+    $$
+    q_a\restriction(b_a\cap b_{a'})
+    =
+    q_{a'}\restriction(b_a\cap b_{a'})
+    \qquad(a,a'\in A).
+    \tag{S2}
+    $$
 
-Then
+    Then
 
-$$
-q=N(\bar p)\cup\bigcup_{a\in A}q_a
-$$
+    $$
+    q=N(\bar p)\cup\bigcup_{a\in A}q_a
+    $$
 
-belongs to $\mathbb{C}(B_{\bar b})$. Consequently,
+    belongs to $\mathbb{C}(B_{\bar b})$. Consequently,
 
-$$
-r_w=q\restriction b_w
-\qquad(w\in W)
-$$
+    $$
+    r_w=q\restriction b_w
+    \qquad(w\in W)
+    $$
 
-defines $\bar r\in\mathbb{C}[\bar b]$ such that
+    defines $\bar r\in\mathbb{C}[\bar b]$ such that
 
-$$
-\bar p\leq\bar r
-\quad\text{and}\quad
-q_a\leq r_a\quad(a\in A).
-$$
+    $$
+    \bar p\leq\bar r
+    \quad\text{and}\quad
+    q_a\leq r_a\quad(a\in A).
+    $$
 
 ??? proof
 
