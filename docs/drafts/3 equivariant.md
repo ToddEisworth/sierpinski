@@ -1,6 +1,6 @@
 # Coherent Decision-making
 
-## The Setup
+## The setup
 
 Fix a $\mathbb P$-name for a coloring $\dot d:[2^\omega]^3\longrightarrow r$, where $r<\omega$. We assume that our construction
  has supplied models $N_s$ for $s\in [B]^{\leq 3}$, corresponding supports
@@ -43,7 +43,7 @@ We think of $F(\alpha)$ as the **code of $\alpha$**.
 
 
 
-## Equivalence over $2^{<n}$
+## Indiscernibility of codes
 
 Our notation follows that of [Sh:288] in this section.
 
@@ -60,12 +60,9 @@ Our notation follows that of [Sh:288] in this section.
     $$
 
 
-The above definition should be thought of by visualizing $n$ as the *resolution level* where we are analyzing our codes, and then $I_n$ is the collection of finite subsets of $2^{\omega}$ that are *resolved* at level $n$.
+We are going to be using the codes $F(\alpha)$ as a way of organizing information, and what $I_n$ does is pick out the finite subsets of $B$ that are *resolved* at level $n$.  If $s\in I_n$, then $n$ is so large that all the branching between codes associated to elements of $s$ has occurred by this height. Thus,  $I_n$ is the collection of finite subsets of $2^{\omega}$ that are *resolved* at level $n$.  It is clear that  $I_n$ is closed under taking subsets, contains all singletons, and the sequence $\langle I_n:n<\omega\rangle$ increases with $n$. 
 
-
-Thus $I_n$ is closed under taking subsets, and the sequence $\langle I_n:n<\omega\rangle$ is increasing with $n$. 
-
-
+The next definition isolates what it means for two elements of $I_n$ to be indiscernible.  
 
 
 !!! definition "The equivalence relation $\equiv^n_F$"
@@ -85,37 +82,31 @@ Thus $I_n$ is closed under taking subsets, and the sequence $\langle I_n:n<\omeg
 
     for every $\alpha\in t$.
 
-Because the members of each $s\in I_n$ have distinct $n$-traces, an $n$-trace determines at most one vertex of $s$. This uniqueness is what makes the equivariant propagation below well defined.
+Since the elements of $I_n$ are resolved at level $n$ and the map $h_{s, t}$ is order-preserving,  this says the points occupying the same relative positions in $s$ and $t$ have the same projections down at level $n$ in $2^{<\omega}$.  Thus, each $\equiv^n_F$ class is determined by an ordered sequence of distinct maximal nodes in $2^n$ corresponding to these projections. Each set of $k$ branches in $2^n$ is going to determine $k!$ different $\equiv^n_F$-classes in $I_n$, depending on the ordering.
 
-Coherent systems
+## Coherent systems
 
 !!! definition "The class $R_n^{-}$"
 
-A member of $R_n^{-}$ is a system
+    A member of $R_n^{-}$ is a system
 
-$$
-x=\langle p_s^x:s\in I_n\rangle
-$$
+    $$
+    x=\langle p_s^x:s\in I_n\rangle
+    $$
 
-satisfying the following conditions.
+    satisfying the following conditions.
 
-1. For every $s\in I_n$,
+    1. For every $s\in I_n$,
 
-   $$
-   p_s^x\in\mathbb P_s.
-   $$
+        $$p_s^x\in\mathbb P_s.$$
 
-2. If $u\subseteq s$ are in $I_n$, then
+    2. If $u\subseteq s$ are in $I_n$, then
 
-   $$
-   p_s^x\restriction b_u=p_u^x.
-   $$
+        $$p_s^x\restriction b_u=p_u^x.$$
 
-3. If $s\equiv_F^n t$, then
+    3. If $s\equiv_F^n t$, then
 
-   $$
-   h_{s,t}(p_t^x)=p_s^x.
-   $$
+        $$h_{s,t}(p_t^x)=p_s^x.$$
 
 Condition 2 is the face-coherence requirement. By exactness of the supports, it is equivalent to
 
