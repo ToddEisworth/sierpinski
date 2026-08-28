@@ -1,187 +1,265 @@
-# Halpern--Lauchli and similarity types
+# End-homogeneity
 
-This note isolates the tree-theoretic material from Section 2 of Shelah's [Sh:288].  Its purpose is expository: to pass from the classical Halpern--Lauchli theorem to Shelah's canonization statement, Theorem 2.7(3), and then to identify the finite similarity types that occur on a skew binary tree.
+## Vocabulary 
 
+Let $T\subseteq 2^{<\omega}$, let $n<\omega$, and let $\sigma$ be a cardinal.
 
-### Trees, subtrees, and perfect trees
-
-We lay out our notation for some standard concepts.  First, the full binary tree is
-
-$$
-2^{<\omega}=\bigcup_{m<\omega}2^m
-$$
-
-and for $s,t\in 2^{<\omega}$, we write
+An **$n$-dimensional level $\sigma$-coloring of $T$** is a function
 
 $$
-s\unlhd t
+d:
+\bigcup_{m<\omega}[T\cap 2^m]^n
+\longrightarrow
+\sigma.
 $$
 
-if $s$ is an initial segment of $t$, and $s\lhd t$ if $s$ is a proper
-initial segment of $t$.
+Thus $d$ assigns a color below $\sigma$ to each $n$-element subset of $T$
+whose members all lie on the same level.
+
+When $\sigma$ is understood, we simply call $d$ an
+**$n$-dimensional level coloring** of $T$.
 
 
-
-
-A **subtree** of $2^{<\omega}$ is a set $T\subseteq 2^{<\omega}$, regarded
-as a tree with the inherited initial-segment order. We do not require a
-subtree to be downward closed.
-
-A subtree $T$ is **downward closed** if
+A direct application of the Halpern-Läuchli to a coloring of a finite power of a tree produces, in general, different strong subtrees in the different coordinates.
+Thus, if we start with a $n$-dimensional level coloring $d$ of some
 
 $$
-t\in T,\ s\unlhd t\quad\Longrightarrow\quad s\in T.
+T^n = T\times\cdots\times T
 $$
 
-Two nodes $s,t\in T$ are **incomparable** if neither $s\unlhd t$ nor
-$t\unlhd s$.
-
- 
-For $\eta\in 2^{<\omega}$, write $\lg(\eta)$ for its length.  If $\eta,\nu\in 2^{<\omega}$, define
+then Halpern-Läuchli gives strong subtrees 
 
 $$
-\Delta(\eta,\nu)
+T_0,\dots, T_{n-1}\subseteq T
+$$
+
+such that the corresponding level product is monochromatic.
+
+For us, the goal will be to find a single perfect strong subtree $S\subseteq T$ such that whenever 
+
+$$
+a = \{\nu_0,\dots,\nu_{n-1}\}
+$$
+
+is an $n$-element subset of some level of $S$, the value $d(a)$ depends only the branching pattern of the nodes in $a$, in a sense we will make precise shortly.  The proof will consist of a sequence of refinements.
+
+
+## End-homogeneity
+
+
+An $n$-dimensional level coloring of $T$ is **end homogeneous** if whenever $\alpha<\beta$ are splitting levels of $T$ and we
+are given an $n$-tuple $\nu_0,\dots, \nu_{n-1}$ from level $\beta$ on which the projection to level $\alpha$ is one-to-one, then
+
+$$
+d(\nu_0,\dots, \nu_{n-1})=d(\nu_0\upharpoonright\alpha,\dots, \nu_{n-1}\upharpoonright \alpha).
+$$
+
+The interpretation is simple: once we reach a point in the tree where the members of the tuple have been separated, then extending their ends farther up the tree will not change the color.
+
+### End-homogeneous canonization
+
+!!! Theorem "End-homogeneous canonization"
+
+    Let $n<\omega$ and let $\sigma<\omega$. Suppose
+
+    $$
+    d:\bigcup_{m<\omega}[2^m]^n\longrightarrow\sigma
+    $$
+
+    is an $n$-dimensional level $\sigma$-coloring of $2^{<\omega}$.
+
+    Then there is a perfect strong subtree
+
+    $$
+    T\subseteq 2^{<\omega}
+    $$
+
+    with synchronized splitting levels such that $d$ is **end homogeneous** on $T$.
+
+
+
+---
+**Proof:**
+
+We construct a strong subtree $T$ by fusion.  The point of the
+construction is that, before declaring a finite front to be a splitting
+level of $T$, we first stabilize the color of every $n$-element subset
+of that front under all subsequent end extensions.
+
+Suppose $F$ is a finite set of nodes on a common level and, for each
+$\eta\in F$, we have a perfect strong tree $U_\eta$ above $\eta$.
+Assume that the trees $U_\eta$ have a common infinite set of splitting
+levels.
+
+Fix
+
+$$
+a=\{\eta_0,\ldots,\eta_{n-1}\}\in[F]^n.
+$$
+
+The cones $U_{\eta_0},\ldots,U_{\eta_{n-1}}$ are pairwise disjoint.
+Hence $d$ induces a coloring of their level product by
+
+$$
+(\nu_0,\ldots,\nu_{n-1})
+\longmapsto
+d(\nu_0,\ldots,\nu_{n-1}).
+$$
+
+Apply the synchronized Halpern--Läuchli theorem to this product.
+We obtain strong subtrees of the $U_{\eta_i}$, with a common infinite
+set of splitting levels, and a color $c_a<\sigma$ such that
+
+$$
+d(\nu_0,\ldots,\nu_{n-1})=c_a
+$$
+
+whenever the $\nu_i$ are chosen from a common splitting level of the
+corresponding subtrees.
+
+There are only finitely many members of $[F]^n$.  We therefore repeat
+this procedure finitely many times, once for each $a\in[F]^n$.
+At each step we pass to further strong subtrees.  Previously obtained
+homogeneity is preserved under further thinning.  We may also thin the
+remaining coordinate trees so that all of the trees continue to have
+the same splitting levels.
+
+Consequently we obtain, for every $\eta\in F$, a perfect strong subtree
+
+$$
+V_\eta\subseteq U_\eta
+$$
+
+such that the $V_\eta$ have a common infinite set $L$ of splitting
+levels and, for every $a\in[F]^n$, there is a color $c_a$ satisfying
+
+$$
+d(\{\nu_\eta:\eta\in a\})=c_a
+$$
+
+whenever $\ell\in L$ and
+
+$$
+\nu_\eta\in V_\eta\cap 2^\ell
+\qquad(\eta\in a).
+$$
+
+We now carry out the fusion.
+
+Suppose a finite front $R_k$ of size $2^k$ has been constructed,
+together with synchronized perfect trees above its members.  Apply the
+preceding finite stabilization procedure to $R_k$.  Choose a common
+splitting level $\ell_k$ of the resulting trees and, for each
+$\rho\in R_k$, choose one node
+
+$$
+\eta_\rho\in V_\rho\cap2^{\ell_k}.
+$$
+
+Let
+
+$$
+F_k=\{\eta_\rho:\rho\in R_k\}.
+$$
+
+For every $a\in[R_k]^n$, if
+
+$$
+a^*=\{\eta_\rho:\rho\in a\}\in[F_k]^n,
+$$
+
+then, by the choice of $\ell_k$,
+
+$$
+d(a^*)=c_a.
+$$
+
+Moreover this value is now permanent: at every later common splitting
+level, every choice of one extension above each member of $a^*$ still
+has color $c_a$.  Thus
+
+$$
+d(\{\nu_\eta:\eta\in a^*\})=d(a^*)
+$$
+
+for all subsequent synchronized end extensions of $a^*$.
+
+Each member of $F_k$ lies at a splitting level.  Choose one extension
+on each of its two sides, all on a common later level, to form the next
+raw front $R_{k+1}$.  Continue recursively.
+
+The fronts
+
+$$
+F_0,F_1,F_2,\ldots
+$$
+
+form the levels of a perfect strong subtree $T\subseteq2^{<\omega}$,
+with synchronized splitting levels
+
+$$
+\ell_0<\ell_1<\ell_2<\cdots.
+$$
+
+It remains to verify end homogeneity.  Let $\ell_j<\ell_k$ be splitting
+levels of $T$, and let
+
+$$
+\{\nu_0,\ldots,\nu_{n-1}\}\subseteq T\cap2^{\ell_k}
+$$
+
+have pairwise distinct restrictions to $\ell_j$.  Put
+
+$$
+\eta_i=\nu_i\restriction\ell_j.
+$$
+
+When the front $F_j=T\cap2^{\ell_j}$ was constructed, the color of the
+$n$-set
+
+$$
+\{\eta_0,\ldots,\eta_{n-1}\}
+$$
+
+was stabilized under every subsequent synchronized end extension.
+Hence
+
+$$
+d(\nu_0,\ldots,\nu_{n-1})
 =
-\min\{i:\eta(i)\neq \nu(i)\text{ or }i=\lg(\eta)\text{ or }i=\lg(\nu)\}.
+d(\eta_0,\ldots,\eta_{n-1}).
 $$
 
-Thus, for two incomparable nodes, $\Delta(\eta,\nu)$ is their first coordinate of disagreement, and the boundary data is just 
+Since distinct binary sequences preserve their lexicographic order
+under extension, the order requirement in the definition of end
+homogeneity is automatic for the lexicographic orders.
+
+Therefore $d$ is end homogeneous on $T$.
 
 $$
-\Delta(\eta,\eta)=\lg(\eta).
+\tag*{$\square$}
 $$
 
-For a subtree $T\subseteq 2^{<\omega}$, let $\operatorname{sp}(T)$ be the set of splitting nodes of $T$, that is those $\eta\in T$ such that both $\eta^\frown\langle 0\rangle$ and $\eta^\frown\langle 1\rangle$ are in $T$.  The **splitting levels** of $T$ are defined by
+---
+
+
+
+More explicitly, suppose $\alpha<\beta$ are splitting levels of $T$, and
 
 $$
-\operatorname{SP}(T)
-=
-\{\lg(\eta):\eta\in\operatorname{sp}(T)\}.
+\{\nu_0,\ldots,\nu_{n-1}\}
+\subseteq
+T\cap 2^\beta
 $$
 
-A subtree $T$ is **perfect** if every node of $T$ has two incomparable
-extensions in $T$; that is, for every $s\in T$ there are incomparable
-$t_0,t_1\in T$ such that
+is such that the restrictions
 
 $$
-s\unlhd t_0
-\qquad\text{and}\qquad
-s\unlhd t_1.
+\nu_0\restriction\alpha,\ldots,\nu_{n-1}\restriction\alpha
 $$
 
-
-
-
-
-
-
-
-
-
-!!! Definition "Strong Embeddings"
-      Let \(S,T\subseteq 2^{<\omega}\) be trees. An injection $e:S\longrightarrow T$
-
-      is a **strong embedding** if the following hold.
-
-      * **Tree order is preserved:** $s\subseteq t\Longleftrightarrow e(s)\subseteq e(t).$
-
-      * **Levels are preserved up to a common reindexing:** there is a strictly increasing map $h:\{\lg(s):s\in S\}\longrightarrow\omega$
-
-         such that $\lg(e(s))=h(\lg(s))$ for every $s\in S$.
-
-      * **Left/right branching is preserved:** whenever \(\lg(s)<\lg(t)\), we have $e(t)\bigl(\lg(e(s))\bigr)=t(\lg(s))$.
-   
-
-      The image \(e[S]\) is called a **strong copy** of \(S\) in \(T\).
-
-      Equivalently, condition (3) says that if \(t\) extends \(s^\frown\langle i\rangle\), then \(e(t)\) lies on the \(i\)-side of \(e(s)\) at the level in the ambient tree corresponding to \(s\).
-
-      A subtree \(T'\subseteq T\) is called a **strong subtree** if it is the range of a strong embedding into \(T\).
-
-      In particular, a strong copy of \(2^{<\omega}\) is obtained by choosing an increasing sequence of levels $\ell_0<\ell_1<\ell_2<\cdots$ and realizing the \(k\)-th level of the abstract binary tree inside level \(\ell_k\) of the ambient tree, while preserving the full left/right branching pattern.
-
-
-## Special formats
-
-### Level-synchronized perfect trees
-
-A tree $T\in\operatorname{Per}_{\mathrm{fe}}(2^{<\omega})$ has the property that splitting is determined by the level: if one node of $T\cap 2^m$ splits immediately in $T$, then every node of $T\cap 2^m$ splits immediately in $T$.
-
-Equivalently, $T$ is a strong copy of the full binary tree whose branching takes place on a set of selected levels.  Shelah defines a canonical collapse map
-
-$$
-\operatorname{clp}_T:\operatorname{sp}(T)\longrightarrow 2^{<\omega}
-$$
-
-which preserves both the tree order and the lexicographic order.
-
-### Skew perfect trees
-
-A tree $T\in\operatorname{Per}_{\mathrm{uq}}(2^{<\omega})$ has at most one splitting node on each level.  We will call such a tree **skew**.
-
-Thus the splitting events of a skew tree are canonically ordered by their heights. 
-
-
-
-
-## Halpern--Lauchli 
-
-The classical finite-dimensional Halpern--Lauchli theorem can be stated in the following form.
-
-!!! theorem "Halpern--Lauchli theorem"
-
-      Let $n<\omega$, let $\sigma<\omega$, and let $d:\bigcup_{m<\omega}(2^m)^n\longrightarrow\sigma$ be a finite coloring of level products.  Then there are perfect strong subtrees $T_0,\ldots,T_{n-1}\subseteq 2^{<\omega}$,  an increasing sequence $k_0<k_1<k_2<\cdots$, and a color $c<\sigma$ such that
-
-$$
-\operatorname{SP}(T_i)=\{k_0,k_1,k_2,\ldots\}
-$$
-
-for every $i<n$, and, for every $\ell<\omega$,
-
-$$
-d(\nu_0,\ldots,\nu_{n-1})=c
-$$
-
-whenever
-
-$$
-\nu_i\in T_i\cap 2^{k_\ell}
-\qquad(i<n).
-$$
-
-The essential point for what follows is not merely that the level product is homogeneous, but that the coordinate trees have the **same branching levels**.
-
-This is the form appearing in Sh:288, Theorem 2.7(1)--(2).  Shelah attributes (1) to Halpern and Lauchli, the strengthened synchronization in (2) to Laver, and notes that Pincus observed that the original Halpern--Lauchli proof can be modified to obtain (2).
-
-## 4. End homogeneity
-
-Halpern--Lauchli gives complete homogeneity on a product of several strong trees.  Shelah next repackages this as a canonization property inside one tree.
-
-Fix, for each $m<\omega$, a well-order $<^*_m$ of $2^m$.
-
-A coloring
-
-$$
-d\in\operatorname{Col}^n_\sigma(T)
-$$
-
-is **end homogeneous** for $\langle <^*_m:m<\omega\rangle$ if the following holds.
-
-Suppose $\alpha<\beta$ are splitting levels of $T$, and
-
-$$
-\nu_0,\ldots,\nu_{n-1}\in T\cap 2^\beta
-$$
-
-have pairwise distinct restrictions to level $\alpha$.  Assume moreover that the $<^*$-ordering of the tuple is already determined at level $\alpha$:
-
-$$
-\nu_i<^*_\beta\nu_j
-\quad\Longleftrightarrow\quad
-\nu_i\restriction\alpha<^*_\alpha\nu_j\restriction\alpha
-$$
-
-for all $i,j<n$.  Then
+are pairwise distinct. Enumerate both the upper and lower configurations in
+lexicographic order. Then
 
 $$
 d(\nu_0,\ldots,\nu_{n-1})
@@ -189,19 +267,14 @@ d(\nu_0,\ldots,\nu_{n-1})
 d(\nu_0\restriction\alpha,\ldots,\nu_{n-1}\restriction\alpha).
 $$
 
-The interpretation is simple: once the members of the tuple have separated and their relative order has stabilized, extending their ends farther up the tree does not change the color.
+Thus, once the $n$ branches have separated, extending their ends farther up the
+tree does not change the color.
 
-Shelah denotes the corresponding partition principle by
+This is the end-homogeneous consequence of the synchronized
+Halpern--Läuchli theorem.
 
-$$
-\operatorname{Pr}^{\mathrm{fe}}_{\mathrm{eht}}(\omega,n,\sigma).
-$$
 
-If the sequence $\langle <^*_m:m<\omega\rangle$ is fixed in advance, he writes
 
-$$
-\operatorname{Pr}^{\mathrm{fe}}_{\mathrm{ehtn}}(\omega,n,\sigma).
-$$
 
 The shared-level form of Halpern--Lauchli is what makes this end-homogeneity possible: one repeatedly treats the possible extensions of already separated nodes as coordinates in a level product.
 
@@ -476,19 +549,47 @@ This is why Theorem 2.7(3) is the natural Halpern--Lauchli statement to place af
 
 ## 10. Source map
 
-The relevant portions of Sh:288 are:
+!!! lemma "Lemma [RT23]"
 
-- Definition 2.1: $\operatorname{Per}$, $\operatorname{Per}_{\mathrm{fe}}$, $\operatorname{Per}_{\mathrm{uq}}$, splitting nodes and splitting levels;
-- Definition 2.2: leveled colorings, end homogeneity, strong similarity, similarity, almost homogeneity, and homogeneity;
-- Definition 2.3: the principles $\operatorname{Pr}_{\mathrm{eht}}$, $\operatorname{Pr}_{\mathrm{aht}}$, $\operatorname{Pr}_{\mathrm{ht}}$ and their $\mathrm{fe}$ and fixed-order variants;
-- Fact 2.5(1): thinning to a perfect skew tree;
-- Claim 2.6: passage from end homogeneity to strong-similarity canonization and the special simplifications at $\mu=\omega$;
-- Theorem 2.7(1)--(2): Halpern--Lauchli with synchronized splitting levels;
-- Theorem 2.7(3): $\operatorname{Pr}^{\mathrm{fe}}_{\mathrm{htn}}(\omega,n,\sigma)$ for finite $\sigma$;
-- Remark 3.2(1): Shelah's later count is expressed as $n!$ times the number of skew strong-similarity types.
+    If $X$ is a dense-in-itself subset of $2^{\omega}$ enumerated by
+    $f:\kappa\rightarrow X$, then there is an $A\subseteq \kappa$ of
+    order-type $\omega$ such that $f[A]$ is dense-in-itself.
+    ---
+    Proof:
 
-For the classical Sierpiński count, Galvin--Shelah explicitly note that the standard construction generalizes to $n$-sets with $n!(n-1)!$ colors.
+       For each non-empty relatively open $U\subseteq X$ define
 
-## References
+    $$
+    \rho(U)=\sup\{\alpha+1:f(\alpha)\in U\},
+    $$
 
-- [Sh288] S. Shelah, *Strong Partition Relations Below the Power Set: Consistency -- Was Sierpiński Right? Vol. II*
+    and choose $U$ so that $\delta=\rho(U)$ is minimal. This means every
+    nonempty relatively open $V\subseteq U$ satisfies $\rho(V)=\delta$
+    as well. The ordinal $\delta$ must be a limit. If not, then
+    $\delta=\gamma+1$ and $f(\gamma)\in U$. Since $U$ has no isolated
+    points, there is a non-empty relatively open $V\subseteq U$ avoiding
+    $f(\gamma)$. Then $\rho(V)\leq\gamma<\delta$ and we have contradicted
+    our choice of $U$.
+
+    Now let $V_0,V_1,\dots$ enumerate a basis of nonempty open subsets of
+    $U$ sot that each basis element appears infinitely often. Since
+    $\rho(V_n)=\delta$ we can recursively choose
+
+    $$
+    \alpha_0<\alpha_1<\dots
+    $$
+
+    such that $f(\alpha_n)\in V_n$. Now let
+
+    $$
+    A=\{\alpha_n:n<\omega\}.
+    $$
+    
+    This has order-type $\omega$, and the repetition of basic open sets
+    ensures that $f[A]$ has no isolated points.
+    An $n$-dimensional level coloring of $T$ is **end homogeneous** if whenever $\alpha<\beta$ are splitting levels of $T$ and we
+    are given an $n$-tuple $\nu_0,\dots, \nu_{n-1}$ from level $\beta$ on which the projection to level $\alpha$ is one-to-one, then
+   
+    $$
+    d(\nu_0,\dots, \nu_{n-1})=d(\nu_0\upharpoonright\alpha,\dots, \nu_{n-1}\upharpoonright \alpha).
+    $$
