@@ -65,7 +65,11 @@ In general, the similarity type of an $n$-element leveled set $a$ can be represe
 
     and if we take order into account the number is $n! t_n$. Again, all that matters to us is that this is finite.
 
-Given a representative of the similarity type of \(a\), the additional information needed to determine its strong similarity type consists of the actual levels at which its splitting events occur and the common height of the nodes in \(a\). Order the \(n-1\) splitting nodes of the representative by shortlex and record their actual levels in that order. This produces a finite nondecreasing sequence of natural numbers, with repeated entries corresponding precisely to ties. Together with the common height of the members of \(a\), this sequence determines the strong similarity type of \(a\).  Thus, the strong-similarity data can be coded by a sequence $\langle \ell_0,\dots,\ell_{n-2}, m\rangle$, where $\ell_i$ is the actual level of the $i$-th splitting node in shortlex order, and $m$ is the common height of the members of $a$.
+Given the similarity type of \(a\), its strong similarity type is determined by the actual splitting levels and the common height of its members. Listing the \(n-1\) splitting nodes in shortlex order gives a code
+
+$$ \langle \ell_0,\ldots,\ell_{n-2},m\rangle, $$
+
+where $\ell_0\leq\cdots\leq\ell_{n-2}<m$, repetitions record tied splitting events, and \(m\) is the common height of the members of \(a\).
 
 
 
@@ -76,16 +80,88 @@ We come now to the final canonization theorem that we will need.  Recall that pr
 
 An $n$-dimensional level coloring $d$ is **homogeneous** on $T$ if it is constant on similarity classes of leveled $n$-sets in $T$. 
 
-!!! proposition Proposition
-    Let $d$ be an $n$-dimensional finite level coloring that is almost homogeneous on a perfect strong subtree $T$ of $2^{<\omega}$.  Then there is a perfect strong subtree $S$ of $T$ such that $d$ is homogeneous on $S$.
 
-**Proof:**
 
-If $\tau$ is a similarity type for an $n$-set, then we know the strong similarity types that collapse down to $\tau$ are coded by non-decreasing sequences $\langle \ell_0,\dots,\ell_{n-2}, m\rangle$ as above.  
+!!! proposition "Almost homogeneity implies homogeneity"
+
+
+    Let $d$ be an $n$-dimensional finite level coloring that is almost
+    homogeneous on a perfect strong subtree $T$ of $2^{<\omega}$. Then there is
+    a perfect strong subtree $S$ of $T$ such that $d$ is homogeneous on $S$.
+    
+
+**Proof.**
+
+Let $L$ be the set of splitting levels of $T$. Fix a similarity type $\tau$, and let $r=r(\tau)$ be the number of distinct splitting levels in $\tau$. For
 
 $$
-\tag*{$\square$}
+d_0<\cdots<d_{r-1}<m
 $$
 
+from $L$, choose a realization $a$ of $\tau$ whose distinct splitting levels are $d_0,\ldots,d_{r-1}$ and whose members have height $m$, and define
+
+$$
+c_\tau(d_0,\ldots,d_{r-1},m)=d(a).
+$$
+
+This is well-defined: any two such realizations have the same strong similarity type, so almost homogeneity gives them the same color. Thus $c_\tau$ is a finite coloring of $[L]^{r+1}$.
+
+There are only finitely many similarity types of $n$-sets. Applying the infinite Ramsey theorem finitely many times, choose an infinite set $H\subseteq L$ such that every $c_\tau$ is constant on $[H]^{r(\tau)+1}$.
+
+Thin $T$ to a perfect strong subtree $S$ whose splitting levels are $H$. If $a$ and $b$ are similar leveled $n$-sets from $S$, they have some common similarity type $\tau$. Their distinct splitting levels and terminal heights determine two members of $[H]^{r(\tau)+1}$, so the constancy of $c_\tau$ gives
+
+$$
+d(a)=d(b).
+$$
+
+Hence $d$ is homogeneous on $S$.
+
+$$\tag*{$\square$}$$
+
+!!! corollary "Skew canonization theorem"
 
 
+    Let $n<\omega$, let $\sigma<\omega$, and let
+
+    $$
+    d:\bigcup_{m<\omega}[2^m]^n\longrightarrow\sigma
+    $$
+
+    be an $n$-dimensional level coloring. Then there is a perfect skew subtree
+
+    $$
+    S\subseteq2^{<\omega}
+    $$
+
+    such that $d$ is determined on $S$ by similarity type. Consequently, $d$
+    takes at most $(n-1)!$ values on the similarity classes of unordered leveled
+    $n$-sets from $S$. For ordered leveled $n$-tuples, there are at most
+
+    $$
+    n!(n-1)!
+    $$
+
+    types.
+
+
+**Proof.**
+
+By the synchronized Halpern--Läuchli theorem, there is a perfect strong subtree on which $d$ is end homogeneous. Passing to a further perfect strong subtree, $d$ becomes almost homogeneous. By the preceding proposition, there is then a perfect strong subtree $T$ on which $d$ is homogeneous.
+
+Every perfect tree contains a perfect skew subtree, so choose a perfect skew subtree $S\subseteq T$. Homogeneity is preserved under restriction; hence $d$ is homogeneous on $S$.
+
+Since $S$ is skew, no two splitting events occur at the same level. Thus every similarity type of an unordered leveled $n$-set is determined by the strict ordering of its $n-1$ splitting events. There are at most
+
+$$
+(n-1)!
+$$
+
+such orderings. If the members of the set are indexed, an additional permutation of the $n$ entries must be specified, giving at most
+
+$$
+n!(n-1)!
+$$
+
+ordered similarity types.
+
+$$\tag*{$\square$}$$
