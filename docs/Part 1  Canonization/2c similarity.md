@@ -81,7 +81,7 @@ An $n$-dimensional level coloring $d$ is **homogeneous** on $T$ if it is constan
 
 **Proof:**
 
-Let $\tau$ be a similarity type involving, say, $r\leq n-1$ distinct splitting levels.  Given an increasing sequence $\ell_0<\dots<\ell_r$ of indices from splitting levels of $T$
+If $\tau$ is a similarity type for an $n$-set, then we know the strong similarity types that collapse down to $\tau$ are coded by non-decreasing sequences $\langle \ell_0,\dots,\ell_{n-2}, m\rangle$ as above.  
 
 $$
 \tag*{$\square$}
