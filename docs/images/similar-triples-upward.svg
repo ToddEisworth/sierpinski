@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="970" height="660" viewBox="170 120 970 660" role="img" aria-labelledby="title desc">
+  <title id="title">Two similar triple configurations</title>
+  <desc id="desc">Two upward-growing finite binary-tree configurations with labeled terminal triples; only the tree graphics are shown.</desc>
+<defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .guide { stroke: #d8dee9; stroke-width: 1.4; stroke-dasharray: 6 8; }
+      .edge { stroke: #334155; stroke-width: 4; stroke-linecap: round; }
+      .node { fill: #ffffff; stroke: #334155; stroke-width: 3; }
+      .split { fill: #f59e0b; stroke: #92400e; stroke-width: 3.2; }
+      .terminal { fill: #2563eb; stroke: #1e3a8a; stroke-width: 3.2; }
+      .title { font: 700 29px Georgia, serif; fill: #172033; }
+      .panel { font: 700 25px Georgia, serif; fill: #172033; }
+      .label { font: 20px Georgia, serif; fill: #334155; }
+      .small { font: 18px Georgia, serif; fill: #475569; }
+      .level { font: 17px Georgia, serif; fill: #64748b; }
+      .brace { stroke: #64748b; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+  <rect class="bg" x="170" y="120" width="970" height="660"/>
+  <g id="triple-a">
+    <!-- Edges -->
+    <line class="edge" x1="390" y1="740" x2="390" y2="660"/>
+    <line class="edge" x1="390" y1="660" x2="255" y2="580"/>
+    <line class="edge" x1="390" y1="660" x2="470" y2="580"/>
+    <line class="edge" x1="255" y1="580" x2="255" y2="500"/>
+    <line class="edge" x1="470" y1="580" x2="470" y2="500"/>
+    <line class="edge" x1="255" y1="500" x2="255" y2="420"/>
+    <line class="edge" x1="470" y1="500" x2="410" y2="420"/>
+    <line class="edge" x1="470" y1="500" x2="530" y2="420"/>
+    <line class="edge" x1="255" y1="420" x2="255" y2="340"/>
+    <line class="edge" x1="410" y1="420" x2="410" y2="340"/>
+    <line class="edge" x1="530" y1="420" x2="530" y2="340"/>
+
+    <!-- Nodes, including all non-branching nodes -->
+    <circle class="node" cx="390" cy="740" r="8"/>
+    <circle class="split" cx="390" cy="660" r="10"/>
+    <circle class="node" cx="255" cy="580" r="8"/>
+    <circle class="node" cx="470" cy="580" r="8"/>
+    <circle class="node" cx="255" cy="500" r="8"/>
+    <circle class="split" cx="470" cy="500" r="10"/>
+    <circle class="node" cx="255" cy="420" r="8"/>
+    <circle class="node" cx="410" cy="420" r="8"/>
+    <circle class="node" cx="530" cy="420" r="8"/>
+    <circle class="terminal" cx="255" cy="340" r="11"/>
+    <circle class="terminal" cx="410" cy="340" r="11"/>
+    <circle class="terminal" cx="530" cy="340" r="11"/>
+
+    <text class="label" x="255" y="319" text-anchor="middle">ν₀</text>
+    <text class="label" x="410" y="319" text-anchor="middle">ν₁</text>
+    <text class="label" x="530" y="319" text-anchor="middle">ν₂</text>
+  </g>
+  <g id="triple-b">
+    <!-- Edges -->
+    <line class="edge" x1="930" y1="740" x2="930" y2="660"/>
+    <line class="edge" x1="930" y1="660" x2="930" y2="580"/>
+    <line class="edge" x1="930" y1="580" x2="795" y2="500"/>
+    <line class="edge" x1="930" y1="580" x2="1010" y2="500"/>
+    <line class="edge" x1="795" y1="500" x2="795" y2="420"/>
+    <line class="edge" x1="1010" y1="500" x2="1010" y2="420"/>
+    <line class="edge" x1="795" y1="420" x2="795" y2="340"/>
+    <line class="edge" x1="1010" y1="420" x2="1010" y2="340"/>
+    <line class="edge" x1="795" y1="340" x2="795" y2="260"/>
+    <line class="edge" x1="1010" y1="340" x2="950" y2="260"/>
+    <line class="edge" x1="1010" y1="340" x2="1070" y2="260"/>
+    <line class="edge" x1="795" y1="260" x2="795" y2="180"/>
+    <line class="edge" x1="950" y1="260" x2="950" y2="180"/>
+    <line class="edge" x1="1070" y1="260" x2="1070" y2="180"/>
+
+    <!-- Nodes, including all non-branching nodes -->
+    <circle class="node" cx="930" cy="740" r="8"/>
+    <circle class="node" cx="930" cy="660" r="8"/>
+    <circle class="split" cx="930" cy="580" r="10"/>
+    <circle class="node" cx="795" cy="500" r="8"/>
+    <circle class="node" cx="1010" cy="500" r="8"/>
+    <circle class="node" cx="795" cy="420" r="8"/>
+    <circle class="node" cx="1010" cy="420" r="8"/>
+    <circle class="node" cx="795" cy="340" r="8"/>
+    <circle class="split" cx="1010" cy="340" r="10"/>
+    <circle class="node" cx="795" cy="260" r="8"/>
+    <circle class="node" cx="950" cy="260" r="8"/>
+    <circle class="node" cx="1070" cy="260" r="8"/>
+    <circle class="terminal" cx="795" cy="180" r="11"/>
+    <circle class="terminal" cx="950" cy="180" r="11"/>
+    <circle class="terminal" cx="1070" cy="180" r="11"/>
+
+    <text class="label" x="795" y="159" text-anchor="middle">η₀</text>
+    <text class="label" x="950" y="159" text-anchor="middle">η₁</text>
+    <text class="label" x="1070" y="159" text-anchor="middle">η₂</text>
+  </g>
+</svg>

@@ -54,7 +54,8 @@ $$
 d(\nu_0,\dots, \nu_{n-1})=d(\nu_0\upharpoonright\alpha,\dots, \nu_{n-1}\upharpoonright \alpha).
 $$
 
-The interpretation is simple: once we reach a point in the tree where the members of the tuple have been separated, then extending their ends farther up the tree will not change the color.
+The interpretation is simple: once we reach a point in the tree at which the members of the tuple have been separated, then extending their ends farther up the tree does not change the color.  This is essentially the ``level-tree analogue'' of continuity for colorings of $[2^\omega]^n$.
+
 
 ### End-homogeneous canonization
 
