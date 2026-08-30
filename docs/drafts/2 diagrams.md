@@ -11,64 +11,64 @@ ordered as usual, so $q\leq p$ if and only if $q\supseteq p$.
 If $b\subseteq c$ and $p\in\mathbb{P}(c)$, we write
 $p\restriction b$ for $p\restriction(b\times\omega)$.
 
-!!! definition "Exact Support System"
 
-    Let $(W,\leq_W)$ be a finite partial order. An **exact support system**
-    on $W$ is a sequence $\bar b=\langle b_w:w\in W\rangle$ of subsets of $\lambda$ satisfying:
+## Forcing with diagrams
 
-    1. if $u\leq_W v$, then $b_u\subseteq b_v$;
+Let $(W,\leq_W)$ be a finite partial order. 
 
-    2. for all $u,v\in W$,
+A **$W$-indexed support system** is a sequence $\bar b=\langle b_w:w\in W\rangle$ of subsets of $\lambda$ satisfying:
 
-    $$b_u\cap b_v=\bigcup\left\{b_z:z\in W,\ z\leq_W u,\ z\leq_W v\right\}.$$
+* if $u\leq_W v$, then $b_u\subseteq b_v$;
 
-    Put $B_{\bar b}=\bigcup_{w\in W}b_w$.
+    and
 
-!!! definition "Complete $\bar{b}$-diagrams"
+* for all $u,v\in W$,  $b_u\cap b_v=\bigcup\left\{b_z:z\in W,\ z\leq_W u,\ z\leq_W v\right\}.$
 
-    Suppose that $\bar b$ is an exact support system on $W$. A
-    **complete $\bar b$-diagram** is a sequence
-
-    $$
-    \bar p=\langle p_w:w\in W\rangle
-    $$
-
-    such that:
-
-    1. $p_w\in\mathbb{\mathbb{P}}(b_w)$ for every $w\in W$;
-    2. whenever $u\leq_W v$,
-
-    $$
-    p_v\restriction b_u=p_u.
-    $$
+The **support of $\bar{b}$** is defined as $\lambda[{\bar b}]=\bigcup_{w\in W}b_w\subseteq\lambda$.
 
 
-!!! definition "$\mathbb{P}[\bar{b}]$"
-    Finally, define $\mathbb{P}[\bar b]$ to be the set of complete $\bar b$-diagrams with the natural coordinate-wise ordering:
+Now given a $W$-indexed support system $\bar{b}$, a **$\bar b$-diagram** is a sequence
 
-    $$
-    \bar q\leq\bar p
-    \quad\Longleftrightarrow\quad
-    (\forall w\in W)\,[q_w\leq p_w].
-    $$
+$$
+\bar p=\langle p_w:w\in W\rangle
+$$
+
+such that:
+
+1. $p_w\in\mathbb{\mathbb{P}}(b_w)$ for every $w\in W$ (so $p_w$ has support in $b_w$), 
+
+    and
+
+2. $p_v\restriction b_u = p_u$ whenever $u\leq_W v$.
+
+
+Finally, define $\mathbb{P}[\bar b]$ to be the set of $\bar b$-diagrams with the natural coordinate-wise ordering:
+
+$$
+\bar q\leq\bar p
+\quad\Longleftrightarrow\quad
+(\forall w\in W)\,[q_w\leq p_w].
+$$
+
+
 
 The following lemma tells us that this isn't changing the forcing at all:
 
 <a id="lem-cohen-normalization"></a>
 
-!!! lemma "Lemma"
+!!! lemma "Lemma: Normalization"
 
-    If $\bar p\in\mathbb{P}[\bar b]$, then the union  $N(\bar p)=\bigcup_{w\in W}p_w$
-    is a condition in $\mathbb{P}(B_{\bar b})$ satisfying 
+    If $\bar p\in\mathbb{P}[\bar b]$, then the union  $N(\bar{p})=\bigcup_{w\in W}p_w$
+    is a condition $q$ in $\mathbb{P}(\lambda[\bar{b}])$ satisfying 
 
     $$
-    N(\bar p)\restriction b_w=p_w
+    q\restriction b_w=p_w
     $$
     
     for all $w\in W$.   Moreover, the map
     
     $$
-    N:\mathbb{P}[\bar b]\longrightarrow\mathbb{P}(B_{\bar b})
+    N:\mathbb{P}[\bar b]\longrightarrow\mathbb{P}(\lambda[{\bar b}])
     $$
     
     is an isomorphism, whose inverse is
@@ -99,6 +99,7 @@ to this support, and then the order on $W$ tells us which pieces of $\bar{p}$ ar
 manner does not add new forcing information, and it is adding organizational information instead.
 
 
+## Various Lemmas
 
 
 <a id="lem-finite-coherent-strengthening"></a>
