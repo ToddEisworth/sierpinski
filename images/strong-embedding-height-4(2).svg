@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1020" viewBox="0 0 1600 1020" role="img" aria-labelledby="title desc">
+  <title id="title">A strong embedding into the complete binary tree of height four</title>
+  <desc id="desc">The complete binary tree two to the at most four grows upward. The image of the tree with nodes empty, one, one-zero, and one-one is highlighted, using levels zero, two, and four.</desc>
+
+  <rect x="8" y="8" width="1584" height="1004" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+
+  <style>
+    .title { font: 700 26px system-ui, sans-serif; fill: #0f172a; }
+    .subtitle { font: 16px system-ui, sans-serif; fill: #475569; }
+    .level-label { font: 600 14px system-ui, sans-serif; fill: #64748b; }
+    .guide { stroke: #e2e8f0; stroke-width: 1; stroke-dasharray: 5 7; }
+    .edge { stroke: #94a3b8; stroke-width: 2; stroke-linecap: round; }
+    .image-path { stroke: #f59e0b; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; fill: none; opacity: .92; }
+    .node { fill: #ffffff; stroke: #64748b; stroke-width: 2; }
+    .node-label { font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #0f172a; text-anchor: middle; dominant-baseline: central; }
+    .image-node { fill: #0f766e; stroke: #134e4a; stroke-width: 3; }
+    .image-label { font: 700 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+    .callout { font: 600 15px system-ui, sans-serif; fill: #0f766e; }
+    .legend { font: 14px system-ui, sans-serif; fill: #334155; }
+    .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+    .panel-title { font: 700 18px system-ui, sans-serif; fill: #1e293b; text-anchor: middle; }
+    .panel-note { font: 14px system-ui, sans-serif; fill: #64748b; text-anchor: middle; }
+    .mini-edge { stroke: #64748b; stroke-width: 3; stroke-linecap: round; }
+    .mini-target-edge { stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round; }
+    .mini-target { fill: #ffffff; stroke: #64748b; stroke-width: 1.4; }
+    .mini-source { fill: #2563eb; stroke: #1e3a8a; stroke-width: 3; }
+    .mini-image { fill: #0f766e; stroke: #134e4a; stroke-width: 3; }
+    .mini-label { font: 700 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+    .map-arrow { stroke: #f59e0b; stroke-width: 5; stroke-linecap: round; }
+    .map-label { font: 700 18px system-ui, sans-serif; fill: #92400e; text-anchor: middle; }
+  </style>
+
+  <text x="800" y="42" class="title" text-anchor="middle">A strong embedding and its realization</text>
+  <text x="800" y="68" class="subtitle" text-anchor="middle">The source tree, its image, and the image inside the ambient binary tree</text>
+
+  <!-- Compact source tree S -->
+  <rect x="210" y="92" width="470" height="220" rx="14" class="panel"/>
+  <text x="445" y="120" class="panel-title">Source tree S</text>
+  <text x="445" y="297" class="panel-note">levels 0, 1, 2</text>
+  <line x1="445" y1="266" x2="445" y2="205" class="mini-edge"/>
+  <line x1="445" y1="205" x2="382" y2="145" class="mini-edge"/>
+  <line x1="445" y1="205" x2="508" y2="145" class="mini-edge"/>
+  <circle cx="445" cy="266" r="21" class="mini-source"/><text x="445" y="266" class="mini-label">∅</text>
+  <circle cx="445" cy="205" r="21" class="mini-source"/><text x="445" y="205" class="mini-label">1</text>
+  <circle cx="382" cy="145" r="22" class="mini-source"/><text x="382" y="145" class="mini-label">10</text>
+  <circle cx="508" cy="145" r="22" class="mini-source"/><text x="508" y="145" class="mini-label">11</text>
+
+  <!-- Compact unlabeled target tree T = 2^{≤4} -->
+  <rect x="920" y="92" width="470" height="220" rx="14" class="panel"/>
+  <text x="1155" y="120" class="panel-title">Target tree T = 2<tspan baseline-shift="super" font-size="12">≤4</tspan></text>
+  <text x="1155" y="297" class="panel-note">complete binary tree through level 4</text>
+
+  <!-- Compact target edges -->
+  <g class="mini-target-edge">
+    <line x1="1155" y1="270" x2="1047" y2="240"/><line x1="1155" y1="270" x2="1263" y2="240"/>
+    <line x1="1047" y1="240" x2="993" y2="210"/><line x1="1047" y1="240" x2="1101" y2="210"/>
+    <line x1="1263" y1="240" x2="1209" y2="210"/><line x1="1263" y1="240" x2="1317" y2="210"/>
+    <line x1="993" y1="210" x2="966" y2="180"/><line x1="993" y1="210" x2="1020" y2="180"/>
+    <line x1="1101" y1="210" x2="1074" y2="180"/><line x1="1101" y1="210" x2="1128" y2="180"/>
+    <line x1="1209" y1="210" x2="1182" y2="180"/><line x1="1209" y1="210" x2="1236" y2="180"/>
+    <line x1="1317" y1="210" x2="1290" y2="180"/><line x1="1317" y1="210" x2="1344" y2="180"/>
+    <line x1="966" y1="180" x2="952.5" y2="145"/><line x1="966" y1="180" x2="979.5" y2="145"/>
+    <line x1="1020" y1="180" x2="1006.5" y2="145"/><line x1="1020" y1="180" x2="1033.5" y2="145"/>
+    <line x1="1074" y1="180" x2="1060.5" y2="145"/><line x1="1074" y1="180" x2="1087.5" y2="145"/>
+    <line x1="1128" y1="180" x2="1114.5" y2="145"/><line x1="1128" y1="180" x2="1141.5" y2="145"/>
+    <line x1="1182" y1="180" x2="1168.5" y2="145"/><line x1="1182" y1="180" x2="1195.5" y2="145"/>
+    <line x1="1236" y1="180" x2="1222.5" y2="145"/><line x1="1236" y1="180" x2="1249.5" y2="145"/>
+    <line x1="1290" y1="180" x2="1276.5" y2="145"/><line x1="1290" y1="180" x2="1303.5" y2="145"/>
+    <line x1="1344" y1="180" x2="1330.5" y2="145"/><line x1="1344" y1="180" x2="1357.5" y2="145"/>
+  </g>
+
+  <!-- Compact target nodes (intentionally unlabeled) -->
+  <g>
+    <circle cx="1155" cy="270" r="4.5" class="mini-target"/>
+    <circle cx="1047" cy="240" r="4.5" class="mini-target"/><circle cx="1263" cy="240" r="4.5" class="mini-target"/>
+    <circle cx="993" cy="210" r="4.5" class="mini-target"/><circle cx="1101" cy="210" r="4.5" class="mini-target"/>
+    <circle cx="1209" cy="210" r="4.5" class="mini-target"/><circle cx="1317" cy="210" r="4.5" class="mini-target"/>
+    <circle cx="966" cy="180" r="4.5" class="mini-target"/><circle cx="1020" cy="180" r="4.5" class="mini-target"/>
+    <circle cx="1074" cy="180" r="4.5" class="mini-target"/><circle cx="1128" cy="180" r="4.5" class="mini-target"/>
+    <circle cx="1182" cy="180" r="4.5" class="mini-target"/><circle cx="1236" cy="180" r="4.5" class="mini-target"/>
+    <circle cx="1290" cy="180" r="4.5" class="mini-target"/><circle cx="1344" cy="180" r="4.5" class="mini-target"/>
+    <circle cx="952.5" cy="145" r="4.5" class="mini-target"/><circle cx="979.5" cy="145" r="4.5" class="mini-target"/>
+    <circle cx="1006.5" cy="145" r="4.5" class="mini-target"/><circle cx="1033.5" cy="145" r="4.5" class="mini-target"/>
+    <circle cx="1060.5" cy="145" r="4.5" class="mini-target"/><circle cx="1087.5" cy="145" r="4.5" class="mini-target"/>
+    <circle cx="1114.5" cy="145" r="4.5" class="mini-target"/><circle cx="1141.5" cy="145" r="4.5" class="mini-target"/>
+    <circle cx="1168.5" cy="145" r="4.5" class="mini-target"/><circle cx="1195.5" cy="145" r="4.5" class="mini-target"/>
+    <circle cx="1222.5" cy="145" r="4.5" class="mini-target"/><circle cx="1249.5" cy="145" r="4.5" class="mini-target"/>
+    <circle cx="1276.5" cy="145" r="4.5" class="mini-target"/><circle cx="1303.5" cy="145" r="4.5" class="mini-target"/>
+    <circle cx="1330.5" cy="145" r="4.5" class="mini-target"/><circle cx="1357.5" cy="145" r="4.5" class="mini-target"/>
+  </g>
+
+  <!-- Embedding arrow and level map -->
+  <line x1="715" y1="197" x2="875" y2="197" class="map-arrow"/>
+  <polygon points="875,197 854,185 854,209" fill="#f59e0b"/>
+  <text x="795" y="181" class="map-label">e</text>
+  <text x="795" y="226" class="panel-note">0 ↦ 0, 1 ↦ 2, 2 ↦ 4</text>
+
+  <line x1="120" y1="337" x2="1480" y2="337" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="800" y="368" class="panel-title">The image e[S] inside the complete binary tree T through level 4</text>
+
+  <g transform="translate(0,230)">
+
+  <!-- Level guides -->
+  <line x1="58" y1="160" x2="1545" y2="160" class="guide"/>
+  <line x1="58" y1="290" x2="1545" y2="290" class="guide"/>
+  <line x1="58" y1="420" x2="1545" y2="420" class="guide"/>
+  <line x1="58" y1="550" x2="1545" y2="550" class="guide"/>
+  <line x1="58" y1="680" x2="1545" y2="680" class="guide"/>
+  <text x="30" y="160" class="level-label" dominant-baseline="central">4</text>
+  <text x="30" y="290" class="level-label" dominant-baseline="central">3</text>
+  <text x="30" y="420" class="level-label" dominant-baseline="central">2</text>
+  <text x="30" y="550" class="level-label" dominant-baseline="central">1</text>
+  <text x="30" y="680" class="level-label" dominant-baseline="central">0</text>
+
+  <!-- Ambient edges: level 0 to level 1 -->
+  <line x1="800" y1="680" x2="416" y2="550" class="edge"/>
+  <line x1="800" y1="680" x2="1184" y2="550" class="edge"/>
+
+  <!-- Ambient edges: level 1 to level 2 -->
+  <line x1="416" y1="550" x2="224" y2="420" class="edge"/>
+  <line x1="416" y1="550" x2="608" y2="420" class="edge"/>
+  <line x1="1184" y1="550" x2="992" y2="420" class="edge"/>
+  <line x1="1184" y1="550" x2="1376" y2="420" class="edge"/>
+
+  <!-- Ambient edges: level 2 to level 3 -->
+  <line x1="224" y1="420" x2="128" y2="290" class="edge"/>
+  <line x1="224" y1="420" x2="320" y2="290" class="edge"/>
+  <line x1="608" y1="420" x2="512" y2="290" class="edge"/>
+  <line x1="608" y1="420" x2="704" y2="290" class="edge"/>
+  <line x1="992" y1="420" x2="896" y2="290" class="edge"/>
+  <line x1="992" y1="420" x2="1088" y2="290" class="edge"/>
+  <line x1="1376" y1="420" x2="1280" y2="290" class="edge"/>
+  <line x1="1376" y1="420" x2="1472" y2="290" class="edge"/>
+
+  <!-- Ambient edges: level 3 to level 4 -->
+  <line x1="128" y1="290" x2="80" y2="160" class="edge"/>
+  <line x1="128" y1="290" x2="176" y2="160" class="edge"/>
+  <line x1="320" y1="290" x2="272" y2="160" class="edge"/>
+  <line x1="320" y1="290" x2="368" y2="160" class="edge"/>
+  <line x1="512" y1="290" x2="464" y2="160" class="edge"/>
+  <line x1="512" y1="290" x2="560" y2="160" class="edge"/>
+  <line x1="704" y1="290" x2="656" y2="160" class="edge"/>
+  <line x1="704" y1="290" x2="752" y2="160" class="edge"/>
+  <line x1="896" y1="290" x2="848" y2="160" class="edge"/>
+  <line x1="896" y1="290" x2="944" y2="160" class="edge"/>
+  <line x1="1088" y1="290" x2="1040" y2="160" class="edge"/>
+  <line x1="1088" y1="290" x2="1136" y2="160" class="edge"/>
+  <line x1="1280" y1="290" x2="1232" y2="160" class="edge"/>
+  <line x1="1280" y1="290" x2="1328" y2="160" class="edge"/>
+  <line x1="1472" y1="290" x2="1424" y2="160" class="edge"/>
+  <line x1="1472" y1="290" x2="1520" y2="160" class="edge"/>
+
+  <!-- Stretched paths joining the four image nodes -->
+  <path d="M 800 680 L 1184 550 L 1376 420" class="image-path"/>
+  <path d="M 1376 420 L 1280 290 L 1232 160" class="image-path"/>
+  <path d="M 1376 420 L 1472 290 L 1520 160" class="image-path"/>
+
+  <!-- Ambient nodes, level 4 -->
+  <g>
+    <circle cx="80" cy="160" r="17" class="node"/><text x="80" y="160" class="node-label">0000</text>
+    <circle cx="176" cy="160" r="17" class="node"/><text x="176" y="160" class="node-label">0001</text>
+    <circle cx="272" cy="160" r="17" class="node"/><text x="272" y="160" class="node-label">0010</text>
+    <circle cx="368" cy="160" r="17" class="node"/><text x="368" y="160" class="node-label">0011</text>
+    <circle cx="464" cy="160" r="17" class="node"/><text x="464" y="160" class="node-label">0100</text>
+    <circle cx="560" cy="160" r="17" class="node"/><text x="560" y="160" class="node-label">0101</text>
+    <circle cx="656" cy="160" r="17" class="node"/><text x="656" y="160" class="node-label">0110</text>
+    <circle cx="752" cy="160" r="17" class="node"/><text x="752" y="160" class="node-label">0111</text>
+    <circle cx="848" cy="160" r="17" class="node"/><text x="848" y="160" class="node-label">1000</text>
+    <circle cx="944" cy="160" r="17" class="node"/><text x="944" y="160" class="node-label">1001</text>
+    <circle cx="1040" cy="160" r="17" class="node"/><text x="1040" y="160" class="node-label">1010</text>
+    <circle cx="1136" cy="160" r="17" class="node"/><text x="1136" y="160" class="node-label">1011</text>
+    <circle cx="1232" cy="160" r="17" class="node"/><text x="1232" y="160" class="node-label">1100</text>
+    <circle cx="1328" cy="160" r="17" class="node"/><text x="1328" y="160" class="node-label">1101</text>
+    <circle cx="1424" cy="160" r="17" class="node"/><text x="1424" y="160" class="node-label">1110</text>
+    <circle cx="1520" cy="160" r="17" class="node"/><text x="1520" y="160" class="node-label">1111</text>
+  </g>
+
+  <!-- Ambient nodes, level 3 -->
+  <g>
+    <circle cx="128" cy="290" r="17" class="node"/><text x="128" y="290" class="node-label">000</text>
+    <circle cx="320" cy="290" r="17" class="node"/><text x="320" y="290" class="node-label">001</text>
+    <circle cx="512" cy="290" r="17" class="node"/><text x="512" y="290" class="node-label">010</text>
+    <circle cx="704" cy="290" r="17" class="node"/><text x="704" y="290" class="node-label">011</text>
+    <circle cx="896" cy="290" r="17" class="node"/><text x="896" y="290" class="node-label">100</text>
+    <circle cx="1088" cy="290" r="17" class="node"/><text x="1088" y="290" class="node-label">101</text>
+    <circle cx="1280" cy="290" r="17" class="node"/><text x="1280" y="290" class="node-label">110</text>
+    <circle cx="1472" cy="290" r="17" class="node"/><text x="1472" y="290" class="node-label">111</text>
+  </g>
+
+  <!-- Ambient nodes, level 2 -->
+  <g>
+    <circle cx="224" cy="420" r="17" class="node"/><text x="224" y="420" class="node-label">00</text>
+    <circle cx="608" cy="420" r="17" class="node"/><text x="608" y="420" class="node-label">01</text>
+    <circle cx="992" cy="420" r="17" class="node"/><text x="992" y="420" class="node-label">10</text>
+    <circle cx="1376" cy="420" r="17" class="node"/><text x="1376" y="420" class="node-label">11</text>
+  </g>
+
+  <!-- Ambient nodes, level 1 and root -->
+  <g>
+    <circle cx="416" cy="550" r="17" class="node"/><text x="416" y="550" class="node-label">0</text>
+    <circle cx="1184" cy="550" r="17" class="node"/><text x="1184" y="550" class="node-label">1</text>
+    <circle cx="800" cy="680" r="17" class="node"/><text x="800" y="680" class="node-label">∅</text>
+  </g>
+
+  <!-- The four nodes in the image of the strong embedding -->
+  <g>
+    <circle cx="800" cy="680" r="24" class="image-node"/><text x="800" y="680" class="image-label">∅</text>
+    <circle cx="1376" cy="420" r="24" class="image-node"/><text x="1376" y="420" class="image-label">11</text>
+    <circle cx="1232" cy="160" r="25" class="image-node"/><text x="1232" y="160" class="image-label">1100</text>
+    <circle cx="1520" cy="160" r="25" class="image-node"/><text x="1520" y="160" class="image-label">1111</text>
+  </g>
+
+  <!-- Legend -->
+  <circle cx="500" cy="738" r="12" class="image-node"/>
+  <text x="522" y="738" class="legend" dominant-baseline="central">image nodes: ∅ ↦ ∅, 1 ↦ 11, 10 ↦ 1100, 11 ↦ 1111</text>
+  <line x1="1060" y1="738" x2="1115" y2="738" class="image-path"/>
+  <text x="1130" y="738" class="legend" dominant-baseline="central">stretched connecting paths</text>
+  </g>
+</svg>
