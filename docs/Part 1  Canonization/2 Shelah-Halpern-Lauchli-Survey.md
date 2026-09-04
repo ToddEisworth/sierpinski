@@ -1,49 +1,127 @@
-# Halpern--Lauchli
+# The Halpern-Lauchli Theorem
 
 
 
 
-##  Vocabulary
+##  Basic Terms
 
 We lay out our notation for some standard concepts.  First, the full binary tree is
 
 $$
-2^{<\omega}=\bigcup_{m<\omega}2^m
+2^{<\omega}=\bigcup_{m<\omega}2^m,
 $$
 
-and for $s,t\in 2^{<\omega}$, we write $s\unlhd t$ if $s$ is an initial segment of $t$, and $s\lhd t$ if $s$ is a proper
-initial segment of $t$.
+and $2^m$ is level $m$. 
+
+For $s,t\in 2^{<\omega}$, we write $s\unlhd t$ if $s$ is an initial segment of $t$, and $s\lhd t$ if $s$ is a proper
+initial segment of $t$.     We write $|s|$ for the length of $s$, so node $s$ lies on level $|s|$.
+
+A **level subset** of the tree is just a subset of $2^m$ for some fixed $m$.  Similarly, a level $n$-tuple will be a $n$-tuple of *distinct* elements of some $2^m$ (so no repeats allowed).  Thus, a level $n$-tuple enumerates a level subset of the tree of size $n$.  The distinction will be important for us, so we reserve the use of "tuple" for settings where order is important.
+
+
+## Strong embeddings
+
+Given rooted binary trees $S$, $T\subseteq 2^{<\omega}$, a  **strong embedding** is an injection
+
+\[
+e:S\rightarrow T
+\]
+
+for which there is a strictly increasing level map $\lambda$ from the levels of $S$ to the levels of $T$ such that 
+
+- the root of $S$ is sent to the root of $T$,
+
+- levels are respected:  $|e(s)|=\lambda(|s|)$,
+
+- meets are preserved:   $e(s\wedge t)= e(s)\wedge e(t)$, and
+
+- branching directions are preserved:  whenever $s\lhd t$ then $e(t)(|e(s)|)=t(|s|)$.  Equivalently, if $s^\frown i\unlhd t$ then $e(s)^\frown i\unlhd e(t)$.
+
+The image $e[S]$ is called a **strong copy** of $S$ in $T$. It preserves the relative arrangement of the levels, all meets, and all left-right branching directions even though
+the distances between successive levels may be stretched by the embedding.
+
+
+??? example  "Example: Picturing a strong embedding"
+
+      ![strong embedding](../images/strong-embedding-height-4(2).svg)
+      
 
 
 
 
-A **subtree** of $2^{<\omega}$ is a set $T\subseteq 2^{<\omega}$, regarded
-as a tree with the inherited initial-segment order. We do not require a
-subtree to be downward closed.
+## Common level sets
 
-A subtree $T$ is **downward closed** if
+Strong subtrees
 
-$$
-t\in T,\ s\unlhd t\quad\Longrightarrow\quad s\in T.
-$$
+\[
+S_0,\dots,S_{d-1}
+\]
 
-Two nodes $s,t\in T$ are **incomparable** if neither $s\unlhd t$ nor
-$t\unlhd s$.
+have a **common level set** if
+
+\[
+L(S_0)=\cdots=L(S_{d-1}).
+\]
+
+If their common level set is
+
+\[
+L=\{\ell_k:k<\omega\},
+\]
+
+then for each \(k<\omega\) the **\(k\)-th level product** is
+
+\[
+\prod_{i<d}\bigl(S_i\cap 2^{\ell_k}\bigr).
+\]
+
+The full level product is
+
+\[
+\bigcup_{k<\omega}
+\prod_{i<d}\bigl(S_i\cap 2^{\ell_k}\bigr).
+\]
+
+Let \(S,T\subseteq 2^{<\omega}\) be trees. An injection $e:S\longrightarrow T$
+
+is a **strong embedding** if the following hold.
+
+* **Tree order is preserved:** $s\subseteq t\Longleftrightarrow e(s)\subseteq e(t).$
+
+* **Levels are preserved up to a common reindexing:** there is a strictly increasing map $h:\{\lg(s):s\in S\}\longrightarrow\omega$
+
+   such that $\lg(e(s))=h(\lg(s))$ for every $s\in S$.
+
+* **Left/right branching is preserved:** whenever \(\lg(s)<\lg(t)\), we have $e(t)\bigl(\lg(e(s))\bigr)=t(\lg(s))$.
+
+
+The image \(e[S]\) is called a **strong copy** of \(S\) in \(T\).
+
+Equivalently, condition (3) says that if \(t\) extends \(s^\frown\langle i\rangle\), then \(e(t)\) lies on the \(i\)-side of \(e(s)\) at the level in the ambient tree corresponding to \(s\).
+
+A subtree \(T'\subseteq T\) is called a **strong subtree** if it is the range of a strong embedding into \(T\).
+
+In particular, a strong copy of \(2^{<\omega}\) is obtained by choosing an increasing sequence of levels $\ell_0<\ell_1<\ell_2<\cdots$ and realizing the \(k\)-th level of the abstract binary tree inside level \(\ell_k\) of the ambient tree, while preserving the full left/right branching pattern.
+
 
  
-For $\eta\in 2^{<\omega}$, write $\lg(\eta)$ for its length.  If $\eta,\nu\in 2^{<\omega}$, define
+
+
+
+
+
+
+## Meet and splitting level
+
+For \(s,t\in 2^{<\omega}\), let $s\wedge t$ denote their longest common initial segment. If $s$ and $t$ are incomparable, we define
 
 $$
-\Delta(\eta,\nu)
-=
-\min\{i:\eta(i)\neq \nu(i)\text{ or }i=\lg(\eta)\text{ or }i=\lg(\nu)\}.
+\Delta(s,t)=|s\wedge t| =\min\{m: s(m)\neq t(m)\}.
 $$
 
-Thus, for two incomparable nodes, $\Delta(\eta,\nu)$ is their first coordinate of disagreement, and the boundary data is just 
+We use the same notation for branches $x$ and $y$ in $2^\omega$.
 
-$$
-\Delta(\eta,\eta)=\lg(\eta).
-$$
+
 
 For a subtree $T\subseteq 2^{<\omega}$, let $\operatorname{sp}(T)$ be the set of splitting nodes of $T$, that is those $\eta\in T$ such that both $\eta^\frown\langle 0\rangle$ and $\eta^\frown\langle 1\rangle$ are in $T$.  The **splitting levels** of $T$ are defined by
 
