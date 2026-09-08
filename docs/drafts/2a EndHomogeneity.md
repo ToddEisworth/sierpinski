@@ -1,50 +1,5 @@
 # End-homogeneity
 
-## Vocabulary 
-
-Let $T\subseteq 2^{<\omega}$, let $n<\omega$, and let $\sigma$ be a cardinal.
-
-An **$n$-dimensional level $\sigma$-coloring of $T$** is a function
-
-$$
-d:
-\bigcup_{m<\omega}[T\cap 2^m]^n
-\longrightarrow
-\sigma.
-$$
-
-Thus $d$ assigns a color below $\sigma$ to each $n$-element subset of $T$
-whose members all lie on the same level.
-
-When $\sigma$ is understood, we simply call $d$ an
-**$n$-dimensional level coloring** of $T$.
-
-
-A direct application of the Halpern-Läuchli to a coloring of a finite power of a tree produces, in general, different strong subtrees in the different coordinates.
-Thus, if we start with a $n$-dimensional level coloring $d$ of some
-
-$$
-T^n = T\times\cdots\times T
-$$
-
-then Halpern-Läuchli gives strong subtrees 
-
-$$
-T_0,\dots, T_{n-1}\subseteq T
-$$
-
-such that the corresponding level product is monochromatic.
-
-For us, the goal will be to find a single perfect strong subtree $S\subseteq T$ such that whenever 
-
-$$
-a = \{\nu_0,\dots,\nu_{n-1}\}
-$$
-
-is an $n$-element subset of some level of $S$, the value $d(a)$ depends only the branching pattern of the nodes in $a$, in a sense we will make precise shortly.  The proof will consist of a sequence of refinements.
-
-
-## End-homogeneity
 
 
 An $n$-dimensional level coloring of $T$ is **end homogeneous** if whenever $\alpha<\beta$ are splitting levels of $T$ and we

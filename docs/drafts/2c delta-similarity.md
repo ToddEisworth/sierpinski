@@ -1,17 +1,17 @@
-# Similarity
+# &#916;-similarity
 
-## The Similarity Relation
+## The $\Delta$-Similarity Relation
 
-Strong similarity remembers the actual levels at which the branches split. For our final canonization theorem, this is more information than we want. What matters is only the relative pattern of the splitting levels: which split occurs first, which occurs next, and so on.
+$\Delta$-congruence remembers the actual levels at which the branches split. For our final canonization theorem, this is more information than we want. What matters is only the relative pattern of the splitting levels: which split occurs first, which occurs next, and so on.
 
-Thus, two leveled configurations will be called **similar** if they have the same branching pattern after we forget the numerical values of the splitting levels and remember only their relative order. Equivalently, similarity identifies configurations that become strongly similar after an order-preserving relabeling of the relevant levels of the tree.
+Thus, two leveled configurations will be called **$\Delta$-similar** if they have the same branching pattern after we forget the numerical values of the splitting levels and remember only their relative order. Equivalently, similarity identifies configurations that become strongly similar after an order-preserving relabeling of the relevant levels of the tree.
 
-!!! definition "Similarity"
+!!! definition "$\Delta$-Similarity"
 
     Suppose $\bar\nu=\langle \nu_0,\ldots,\nu_{n-1}\rangle$ and $\bar\eta=\langle \eta_0,\ldots,\eta_{n-1}\rangle$
     enumerate $n$-element subsets of levels $2^m$ and $2^{m'}$, respectively.
 
-    We say that $\bar\nu$ and $\bar\eta$ are **similar** if the following hold.
+    We say that $\bar\nu$ and $\bar\eta$ are **$\Delta$-similar** if the following hold.
 
     * For every $i,j,k,\ell<n$, $\Delta(\nu_i,\nu_j)<\Delta(\nu_k,\nu_\ell)$ if and only if  $\Delta(\eta_i,\eta_j)<\Delta(\eta_k,\eta_\ell)$, and 
       
@@ -24,7 +24,7 @@ Thus, two leveled configurations will be called **similar** if they have the sam
     For unordered leveled sets $a$ and $b$, we say that $a$ and $b$ are
     **similar** if their lexicographically increasing enumerations are similar.
 
-Note that if two splitting events occur at the same level in one configuration, then the corresponding splitting events occur must occur at the same level in the other.  
+Note that if two splitting events occur at the same level in one configuration, then the corresponding splitting events occur must occur at the same level in the other. This means that splitting ties are preserved. 
 
 
 
@@ -75,12 +75,11 @@ where $\ell_0\leq\cdots\leq\ell_{n-2}<m$, repetitions record tied splitting even
 
 ## Homogeneous Colorings
 
-We come now to the final canonization theorem that we will need.  Recall that previously we defined when a coloring was almost homogeneous by 
+We come now to the final canonization theorem that we will need.
 
 
-An $n$-dimensional level coloring $d$ is **homogeneous** on $T$ if it is constant on similarity classes of leveled $n$-sets in $T$. 
-
-
+An $n$-dimensional level coloring $d$ is **homogeneous** on $T$ if it's value depends only on the $\Delta$-similarity type of input.
+ 
 
 !!! proposition "Almost homogeneity implies homogeneity"
 
@@ -127,41 +126,19 @@ $$\tag*{$\square$}$$
     d:\bigcup_{m<\omega}[2^m]^n\longrightarrow\sigma
     $$
 
-    be an $n$-dimensional level coloring. Then there is a perfect skew subtree
+    be an $n$-dimensional level coloring. Then there is a  skew subtree
 
     $$
-    S\subseteq2^{<\omega}
+    S\subseteq 2^{<\omega}
     $$
 
-    such that $d$ is determined on $S$ by similarity type. Consequently, $d$
-    takes at most $(n-1)!$ values on the similarity classes of unordered leveled
-    $n$-sets from $S$. For ordered leveled $n$-tuples, there are at most
-
-    $$
-    n!(n-1)!
-    $$
-
-    types.
-
+    on which $d$ is homogeneous. Consequently, $d$ takes on at most $(n-1)!$ values 
+    on inputs from $S$. 
 
 **Proof.**
 
-By the synchronized Halpern--Läuchli theorem, there is a perfect strong subtree on which $d$ is end homogeneous. Passing to a further perfect strong subtree, $d$ becomes almost homogeneous. By the preceding proposition, there is then a perfect strong subtree $T$ on which $d$ is homogeneous.
+By chaining together 
 
-Every perfect tree contains a perfect skew subtree, so choose a perfect skew subtree $S\subseteq T$. Homogeneity is preserved under restriction; hence $d$ is homogeneous on $S$.
-
-Since $S$ is skew, no two splitting events occur at the same level. Thus every similarity type of an unordered leveled $n$-set is determined by the strict ordering of its $n-1$ splitting events. There are at most
-
-$$
-(n-1)!
-$$
-
-such orderings. If the members of the set are indexed, an additional permutation of the $n$ entries must be specified, giving at most
-
-$$
-n!(n-1)!
-$$
-
-ordered similarity types.
+Since $S$ is skew, no two splitting events occur at the same level. Thus every $\Delta$-similarity type of an unordered leveled $n$-set is determined by the ordering of its $n-1$ splitting events (as in the $\tau$ data from the Sierpinski colorings.)
 
 $$\tag*{$\square$}$$

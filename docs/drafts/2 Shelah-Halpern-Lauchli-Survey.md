@@ -2,53 +2,6 @@
 
 
 
-
-##  Basic Terms
-
-We lay out our notation for some standard concepts.  First, the full binary tree is
-
-$$
-2^{<\omega}=\bigcup_{m<\omega}2^m,
-$$
-
-and $2^m$ is level $m$. 
-
-For $s,t\in 2^{<\omega}$, we write $s\unlhd t$ if $s$ is an initial segment of $t$, and $s\lhd t$ if $s$ is a proper
-initial segment of $t$.     We write $|s|$ for the length of $s$, so node $s$ lies on level $|s|$.
-
-A **level subset** of the tree is just a subset of $2^m$ for some fixed $m$.  Similarly, a level $n$-tuple will be a $n$-tuple of *distinct* elements of some $2^m$ (so no repeats allowed).  Thus, a level $n$-tuple enumerates a level subset of the tree of size $n$.  The distinction will be important for us, so we reserve the use of "tuple" for settings where order is important.
-
-
-## Strong embeddings
-
-Given rooted binary trees $S$, $T\subseteq 2^{<\omega}$, a  **strong embedding** is an injection
-
-\[
-e:S\rightarrow T
-\]
-
-for which there is a strictly increasing level map $\lambda$ from the levels of $S$ to the levels of $T$ such that 
-
-- the root of $S$ is sent to the root of $T$,
-
-- levels are respected:  $|e(s)|=\lambda(|s|)$,
-
-- meets are preserved:   $e(s\wedge t)= e(s)\wedge e(t)$, and
-
-- branching directions are preserved:  whenever $s\lhd t$ then $e(t)(|e(s)|)=t(|s|)$.  Equivalently, if $s^\frown i\unlhd t$ then $e(s)^\frown i\unlhd e(t)$.
-
-The image $e[S]$ is called a **strong copy** of $S$ in $T$. It preserves the relative arrangement of the levels, all meets, and all left-right branching directions even though
-the distances between successive levels may be stretched by the embedding.
-
-
-??? example  "Example: Picturing a strong embedding"
-
-      ![strong embedding](../images/strong-embedding-height-4(2).svg)
-      
-
-
-
-
 ## Common level sets
 
 Strong subtrees
@@ -211,3 +164,4 @@ This is the form appearing in [Sh288] as Theorem 2.7(1)--(2).  Shelah attributes
 
 - [M] K. R. Milliken, “A Ramsey Theorem for Trees,” *Journal of Combinatorial Theory, Series A* **26** (1979), no. 3, 215–237.  
   
+- [T] Todorcevic, Stevo. *Introduction to Ramsey Spaces*. Annals of Mathematics Studies, vol. 174. Princeton, NJ: Princeton University Press, 2010.

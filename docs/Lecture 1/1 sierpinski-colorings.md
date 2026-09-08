@@ -11,40 +11,36 @@ Sierpiński [S33] proved that there is a coloring of pairs of reals with two col
 
 Proof:
 
-The proof involves three orders: a well-ordering $\prec$ of $2^{\omega}$,
-the lexicographic ordering $<_{\mathrm{lex}}$ on $2^{\omega}$, and the
-shortlex order $\triangleleft$ on $2^{<\omega}$. This latter order is
-defined by
+We use three orders:
+
+-  a well-ordering $\prec$ of $2^{\omega}$,
+
+-  the lexicographic ordering $<_{\mathrm{lex}}$ on $2^{\omega}$, and 
+
+- the shortlex order $\triangleleft$ on $2^{<\omega}$, defined by
 
 $$
 s\triangleleft t\iff |s|<|t|,\text{ or }(|s|=|t|\text{ and }s<_{\mathrm{lex}}t),
 $$
 
-so it compares finite sequences first by length, and then using the
+The shortlex order compares finite sequences first by length and uses the
 lexicographic order as a tie-breaker.
 
-Given $a\in[2^\omega]^n$, we write $a$ in lexicographically increasing
-order as
+Any $a\in[2^\omega]^n$ comes equipped with its lexicographically increasing order, and if we write $a=\{x_0,\dots, x_{n-1}\}$ then we are implicitly enumerating it increasing lexicographic order.
 
-$$
-x_0<_{\mathrm{lex}}\cdots<_{\mathrm{lex}}x_{n-1}
-$$
+Given this implicit order of $a$, we derive an (ordered) $n-1$-tuple of elements of $2^{<\omega}$ by taking the meet of consecutive entries:
 
-and by comparing consecutive entries, we derive an $n-1$-tuple
+$$(y_0,\dots,y_{n-2})=(x_0\wedge x_1,\dots,x_{n-2}\wedge x_{n-1}).$$
 
-$$
-(x_0\wedge x_1,\dots,x_{n-2}\wedge x_{n-1})
-    =(y_0,\dots,y_{n-2})
-$$
-
-where each $y_i\in 2^{<\omega}$. Note that these entries are pairwise
-distinct because our tree is binary.
+Note that these entries are pairwise distinct because our tree is binary.
 
 From these two tuples $(x_0,\dots,x_{n-1})$ and
 $(y_0,\dots,y_{n-2})$ we derive two (unique) permutations
-$\sigma_a\in S_n$ and $\tau_a\in S_{n-1}$: $\sigma_a$ is the permutation
-of $n$ that rearranges the $n$-tuple into $\prec$-increasing order, and
-$\tau_a$ is the permutation of $n-1$ that arranges the $n-1$-tuple into
+$\sigma_a\in S_n$ and $\tau_a\in S_{n-1}$ as follows:
+
+- $\sigma_a$ is the permutation of $n$ that rearranges the $n$-tuple into $\prec$-increasing order, and
+
+- $\tau_a$ is the permutation of $n-1$ that arranges the $n-1$-tuple into
 $\triangleleft$-increasing order. Thus,
 
 $$
@@ -184,7 +180,7 @@ Since we arranged $|v_i|<|v_{i+1}|$ we know
 
 $$b_{\tau(0)}\triangleleft \cdots\triangleleft b_{\tau(n-2)}.$$
 
-To finish the proof, we note that $A\cap [u_i]$ is a non-empty relatively open subset of $A$, hence infinite.  This means we can choose $x_i\in A\cap [u_i]$ for each $i<n$ in the order prescribed by the permutation $\sigma$.  In details, since $A=\{a_k:k<\omega\}$ is $\prec$-increasing and each $A\cap [u_i]$ is infinite, we can choose $k_0<k_1<cdots<k_{n-1}$ so that $a_{k_j}$ is in $A\cap [u_{\sigma(j)}]$.   If we set $x_{\sigma(j)}= a_{k_j}$ then $x_i\in A\cap [u_i]$ for each $i<n$ while
+To finish the proof, we note that $A\cap [u_i]$ is a non-empty relatively open subset of $A$, hence infinite.  This means we can choose $x_i\in A\cap [u_i]$ for each $i<n$ in the order prescribed by the permutation $\sigma$.  In details, since $A=\{a_k:k<\omega\}$ is $\prec$-increasing and each $A\cap [u_i]$ is infinite, we can choose $k_0<k_1<\cdots<k_{n-1}$ so that $a_{k_j}$ is in $A\cap [u_{\sigma(j)}]$.   If we set $x_{\sigma(j)}= a_{k_j}$ then $x_i\in A\cap [u_i]$ for each $i<n$ while
 
 $$x_{\sigma(0)}\prec\cdots\prec x_{\sigma(n-1)}.$$
 
@@ -199,6 +195,7 @@ $$\tag*{$\square$}$$
     $$
     2^{\aleph_0}\nrightarrow[\aleph_1]^n_{n!(n-1)!}.
     $$
+
     ---
     Proof:
     Any uncountable subset of $2^\omega$ will contain a countable dense-in-itself subset, and so the result follows immediately.
