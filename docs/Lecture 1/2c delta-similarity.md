@@ -2,7 +2,7 @@
 
 ## The &#916;-Similarity Relation
 
-$\Delta$-congruence remembers the actual levels at which the branches split, and now we want to define the coarser relation of $\Delta$-similarity that looks instead only at the relative pattern of the splitting levels: which split occurs first, which occurs next, and so on.
+$\Delta$-congruence remembers the actual levels at which the branches split, and now we want to define the coarser relation of $\Delta$-similarity that looks instead only at the relative pattern of the splitting levels: which split occurs first, which occurs next, and so on.  The ideas here appear first in [B].  
 
 !!! definition "$\Delta$-Similarity"
 
@@ -142,3 +142,5 @@ only on $\Delta$-similarity type on $S$, it takes at most $(n-1)!$ values there.
 $$
 \tag*{$\square$}
 $$
+
+- [B] Andreas Blass, *A Partition Theorem for Perfect Sets*, **Proceedings of the American Mathematical Society** 82 (1981), no. 2, 271–277.
