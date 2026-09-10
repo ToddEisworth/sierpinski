@@ -24,13 +24,13 @@ The interpretation is simple: once we reach a point in the tree at which the mem
 
     is an $n$-dimensional level $\sigma$-coloring of $2^{<\omega}$.
 
-    Then there is a perfect strong subtree
+    Then there is a strong subtree
 
     $$
     T\subseteq 2^{<\omega}
     $$
 
-    with synchronized splitting levels such that $d$ is **end homogeneous** on $T$.
+    such that $d$ is **end homogeneous** on $T$.
 
 
 
