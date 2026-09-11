@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,4 L0,8 Z" fill="#111"/>
+    </marker>
+    <style>
+      .title { font-family: Georgia, 'Times New Roman', serif; font-size: 38px; fill: #111; }
+      .math  { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 30px; fill: #0b32ff; }
+      .label { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; fill: #111; }
+      .small { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; fill: #111; }
+      .caption { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; fill: #111; }
+      .edge { stroke: #111; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .guide { stroke: #555; stroke-width: 2; stroke-dasharray: 2 7; }
+      .node-open { fill: white; stroke: #111; stroke-width: 2.5; }
+      .node-blue { fill: #063bff; stroke: #111; stroke-width: 2.2; }
+      .node-orange { fill: #ff9800; stroke: #111; stroke-width: 2.2; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="900" fill="white"/>
+
+  <!-- Titles -->
+  <text x="120" y="62" class="title">Generated tree of {ν₀, ν₁, ν₂, ν₃}</text>
+  <text x="1120" y="62" class="title">Collapse representative</text>
+
+  <!-- Left level labels and guides -->
+  <g>
+    <text x="48" y="172" class="small">ℓ₆</text><line x1="95" y1="164" x2="165" y2="164" class="guide"/>
+    <text x="48" y="252" class="small">ℓ₅</text><line x1="95" y1="244" x2="165" y2="244" class="guide"/>
+    <text x="48" y="332" class="small">ℓ₄</text><line x1="95" y1="324" x2="165" y2="324" class="guide"/>
+    <text x="48" y="412" class="small">ℓ₃</text><line x1="95" y1="404" x2="165" y2="404" class="guide"/>
+    <text x="48" y="492" class="small">ℓ₂</text><line x1="95" y1="484" x2="165" y2="484" class="guide"/>
+    <text x="48" y="572" class="small">ℓ₁</text><line x1="95" y1="564" x2="165" y2="564" class="guide"/>
+    <text x="48" y="652" class="small">ℓ₀</text><line x1="95" y1="644" x2="165" y2="644" class="guide"/>
+  </g>
+
+  <!-- Left tree labels -->
+  <text x="220" y="138" class="math">ν₀</text>
+  <text x="350" y="138" class="math">ν₁</text>
+  <text x="480" y="138" class="math">ν₂</text>
+  <text x="605" y="138" class="math">ν₃</text>
+
+  <!-- Left tree edges -->
+  <g class="edge">
+    <!-- nu0 chain -->
+    <line x1="240" y1="164" x2="240" y2="244"/>
+    <line x1="240" y1="244" x2="240" y2="324"/>
+    <line x1="240" y1="324" x2="240" y2="404"/>
+    <line x1="240" y1="404" x2="240" y2="484"/>
+
+    <!-- nu1 chain -->
+    <line x1="370" y1="164" x2="370" y2="244"/>
+    <line x1="370" y1="244" x2="370" y2="324"/>
+    <line x1="370" y1="324" x2="470" y2="404"/>
+
+    <!-- nu2 / nu3 meet -->
+    <line x1="500" y1="164" x2="500" y2="244"/>
+    <line x1="500" y1="244" x2="560" y2="324"/>
+    <line x1="620" y1="164" x2="620" y2="244"/>
+    <line x1="620" y1="244" x2="560" y2="324"/>
+    <!-- no orphan predecessor below this meet -->
+    <line x1="560" y1="324" x2="470" y2="404"/>
+
+    <!-- central trunk -->
+    <line x1="470" y1="404" x2="470" y2="484"/>
+    <line x1="470" y1="484" x2="470" y2="644"/>
+
+    <!-- lower-left branch -->
+    <path d="M240 484 C300 520, 395 575, 470 644"/>
+  </g>
+
+  <!-- Left tree nodes -->
+  <g>
+    <!-- blue leaves -->
+    <circle cx="240" cy="164" r="11" class="node-blue"/>
+    <circle cx="370" cy="164" r="11" class="node-blue"/>
+    <circle cx="500" cy="164" r="11" class="node-blue"/>
+    <circle cx="620" cy="164" r="11" class="node-blue"/>
+
+    <!-- white non-splitting nodes -->
+    <circle cx="240" cy="244" r="11" class="node-open"/>
+    <circle cx="240" cy="324" r="11" class="node-open"/>
+    <circle cx="240" cy="404" r="11" class="node-open"/>
+    <circle cx="370" cy="244" r="11" class="node-open"/>
+    <circle cx="370" cy="324" r="11" class="node-open"/>
+    <circle cx="500" cy="244" r="11" class="node-open"/>
+    <circle cx="620" cy="244" r="11" class="node-open"/>
+    <circle cx="560" cy="324" r="11" class="node-orange"/>
+    <circle cx="470" cy="484" r="11" class="node-open"/>
+
+    <!-- remaining splitting nodes -->
+    <circle cx="240" cy="484" r="11" class="node-open"/>
+    <circle cx="470" cy="404" r="11" class="node-orange"/>
+    <circle cx="470" cy="644" r="11" class="node-orange"/>
+  </g>
+
+  <!-- Center arrow and instruction -->
+  <text x="725" y="392" class="small">delete non-splitting</text>
+  <text x="735" y="432" class="small">levels and reindex</text>
+  <line x1="710" y1="470" x2="1000" y2="470" class="edge" marker-end="url(#arrowhead)"/>
+
+  <!-- Right level labels and guides -->
+  <text x="1045" y="300" class="small">2</text><line x1="1080" y1="292" x2="1150" y2="292" class="guide"/>
+  <text x="1045" y="445" class="small">1</text><line x1="1080" y1="437" x2="1150" y2="437" class="guide"/>
+  <text x="1045" y="570" class="small">0</text><line x1="1080" y1="562" x2="1150" y2="562" class="guide"/>
+
+  <!-- Right labels -->
+  <text x="1145" y="138" class="math">ν₀</text>
+  <text x="1260" y="138" class="math">ν₁</text>
+  <text x="1375" y="138" class="math">ν₂</text>
+  <text x="1490" y="138" class="math">ν₃</text>
+
+  <!-- Right collapsed tree edges -->
+  <g class="edge">
+    <line x1="1160" y1="164" x2="1320" y2="562"/>
+    <line x1="1275" y1="164" x2="1355" y2="437"/>
+    <line x1="1390" y1="164" x2="1450" y2="292"/>
+    <line x1="1505" y1="164" x2="1450" y2="292"/>
+    <line x1="1450" y1="292" x2="1355" y2="437"/>
+    <line x1="1355" y1="437" x2="1320" y2="562"/>
+  </g>
+
+  <!-- Right collapsed tree nodes -->
+  <g>
+    <circle cx="1160" cy="164" r="11" class="node-blue"/>
+    <circle cx="1275" cy="164" r="11" class="node-blue"/>
+    <circle cx="1390" cy="164" r="11" class="node-blue"/>
+    <circle cx="1505" cy="164" r="11" class="node-blue"/>
+    <circle cx="1450" cy="292" r="11" class="node-orange"/>
+    <circle cx="1355" cy="437" r="11" class="node-orange"/>
+    <circle cx="1320" cy="562" r="11" class="node-orange"/>
+  </g>
+
+  <!-- Bottom caption -->
+  <text x="260" y="855" class="caption">The collapse keeps the splitting pattern and forgets the non-splitting levels.</text>
+</svg>

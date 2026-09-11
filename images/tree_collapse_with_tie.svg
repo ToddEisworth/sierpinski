@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,4 L0,8 Z" fill="#111"/>
+    </marker>
+    <style>
+      .title { font-family: Georgia, 'Times New Roman', serif; font-size: 38px; fill: #111; }
+      .math { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 30px; fill: #0b32ff; }
+      .small { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; fill: #111; }
+      .caption { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; fill: #111; }
+      .edge { stroke: #111; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .guide { stroke: #555; stroke-width: 2; stroke-dasharray: 2 7; }
+      .node-open { fill: white; stroke: #111; stroke-width: 2.5; }
+      .node-blue { fill: #063bff; stroke: #111; stroke-width: 2.2; }
+      .node-orange { fill: #ff9800; stroke: #111; stroke-width: 2.2; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="900" fill="white"/>
+
+  <!-- Titles -->
+  <text x="120" y="62" class="title">Generated tree of {ν₀, ν₁, ν₂, ν₃}</text>
+  <text x="1090" y="62" class="title">Collapse representative</text>
+
+  <!-- Left level labels and guides -->
+  <g>
+    <text x="48" y="172" class="small">ℓ₆</text><line x1="95" y1="164" x2="165" y2="164" class="guide"/>
+    <text x="48" y="252" class="small">ℓ₅</text><line x1="95" y1="244" x2="165" y2="244" class="guide"/>
+    <text x="48" y="332" class="small">ℓ₄</text><line x1="95" y1="324" x2="165" y2="324" class="guide"/>
+    <text x="48" y="412" class="small">ℓ₃</text><line x1="95" y1="404" x2="165" y2="404" class="guide"/>
+    <text x="48" y="492" class="small">ℓ₂</text><line x1="95" y1="484" x2="165" y2="484" class="guide"/>
+    <text x="48" y="572" class="small">ℓ₁</text><line x1="95" y1="564" x2="165" y2="564" class="guide"/>
+    <text x="48" y="652" class="small">ℓ₀</text><line x1="95" y1="644" x2="165" y2="644" class="guide"/>
+  </g>
+
+  <!-- Left tree labels -->
+  <text x="220" y="138" class="math">ν₀</text>
+  <text x="350" y="138" class="math">ν₁</text>
+  <text x="480" y="138" class="math">ν₂</text>
+  <text x="605" y="138" class="math">ν₃</text>
+
+  <!-- Left tree edges -->
+  <g class="edge">
+    <!-- terminal chains -->
+    <line x1="240" y1="164" x2="240" y2="244"/>
+    <line x1="370" y1="164" x2="370" y2="244"/>
+    <line x1="500" y1="164" x2="500" y2="244"/>
+    <line x1="620" y1="164" x2="620" y2="244"/>
+
+    <!-- the two tied splitting events at level l4 -->
+    <line x1="240" y1="244" x2="305" y2="324"/>
+    <line x1="370" y1="244" x2="305" y2="324"/>
+    <line x1="500" y1="244" x2="560" y2="324"/>
+    <line x1="620" y1="244" x2="560" y2="324"/>
+
+    <!-- non-splitting levels below the tied events -->
+    <line x1="305" y1="324" x2="335" y2="404"/>
+    <line x1="335" y1="404" x2="365" y2="484"/>
+    <line x1="365" y1="484" x2="395" y2="564"/>
+    <line x1="560" y1="324" x2="530" y2="404"/>
+    <line x1="530" y1="404" x2="500" y2="484"/>
+    <line x1="500" y1="484" x2="470" y2="564"/>
+
+    <!-- first splitting event -->
+    <line x1="395" y1="564" x2="432" y2="644"/>
+    <line x1="470" y1="564" x2="432" y2="644"/>
+  </g>
+
+  <!-- Left tree nodes -->
+  <g>
+    <circle cx="240" cy="164" r="11" class="node-blue"/>
+    <circle cx="370" cy="164" r="11" class="node-blue"/>
+    <circle cx="500" cy="164" r="11" class="node-blue"/>
+    <circle cx="620" cy="164" r="11" class="node-blue"/>
+
+    <circle cx="240" cy="244" r="11" class="node-open"/>
+    <circle cx="370" cy="244" r="11" class="node-open"/>
+    <circle cx="500" cy="244" r="11" class="node-open"/>
+    <circle cx="620" cy="244" r="11" class="node-open"/>
+
+    <circle cx="305" cy="324" r="11" class="node-orange"/>
+    <circle cx="560" cy="324" r="11" class="node-orange"/>
+
+    <circle cx="335" cy="404" r="11" class="node-open"/>
+    <circle cx="530" cy="404" r="11" class="node-open"/>
+    <circle cx="365" cy="484" r="11" class="node-open"/>
+    <circle cx="500" cy="484" r="11" class="node-open"/>
+    <circle cx="395" cy="564" r="11" class="node-open"/>
+    <circle cx="470" cy="564" r="11" class="node-open"/>
+
+    <circle cx="432" cy="644" r="11" class="node-orange"/>
+  </g>
+
+  <!-- Center arrow and instruction -->
+  <text x="725" y="392" class="small">delete non-splitting</text>
+  <text x="735" y="432" class="small">levels and reindex</text>
+  <line x1="710" y1="470" x2="1000" y2="470" class="edge" marker-end="url(#arrowhead)"/>
+
+  <!-- Right retained levels -->
+  <text x="1045" y="365" class="small">1</text><line x1="1080" y1="357" x2="1150" y2="357" class="guide"/>
+  <text x="1045" y="570" class="small">0</text><line x1="1080" y1="562" x2="1150" y2="562" class="guide"/>
+
+  <!-- Right labels -->
+  <text x="1145" y="138" class="math">ν₀</text>
+  <text x="1260" y="138" class="math">ν₁</text>
+  <text x="1375" y="138" class="math">ν₂</text>
+  <text x="1490" y="138" class="math">ν₃</text>
+
+  <!-- Right collapsed tree edges -->
+  <g class="edge">
+    <line x1="1160" y1="164" x2="1218" y2="357"/>
+    <line x1="1275" y1="164" x2="1218" y2="357"/>
+    <line x1="1390" y1="164" x2="1448" y2="357"/>
+    <line x1="1505" y1="164" x2="1448" y2="357"/>
+    <line x1="1218" y1="357" x2="1333" y2="562"/>
+    <line x1="1448" y1="357" x2="1333" y2="562"/>
+  </g>
+
+  <!-- Right collapsed tree nodes -->
+  <g>
+    <circle cx="1160" cy="164" r="11" class="node-blue"/>
+    <circle cx="1275" cy="164" r="11" class="node-blue"/>
+    <circle cx="1390" cy="164" r="11" class="node-blue"/>
+    <circle cx="1505" cy="164" r="11" class="node-blue"/>
+    <circle cx="1218" cy="357" r="11" class="node-orange"/>
+    <circle cx="1448" cy="357" r="11" class="node-orange"/>
+    <circle cx="1333" cy="562" r="11" class="node-orange"/>
+  </g>
+
+  <!-- Bottom caption -->
+  <text x="250" y="855" class="caption">The two splitting events on ℓ₄ remain tied after the non-splitting levels are removed.</text>
+</svg>
