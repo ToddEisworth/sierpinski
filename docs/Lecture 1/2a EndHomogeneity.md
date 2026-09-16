@@ -16,11 +16,11 @@ The interpretation is simple: once we reach a point in the tree at which the mem
 
 !!! Theorem "End-homogeneous canonization"
 
- Let $n<\omega$ and let $\sigma<\omega$. Suppose
- 
-     $$
-     d:\bigcup_{m<\omega}[2^m]^n\longrightarrow\sigma
-     $$
+    Let $n<\omega$ and let $\sigma<\omega$. Suppose
+
+    $$
+    d:\bigcup_{m<\omega}[2^m]^n\longrightarrow\sigma
+    $$
 
     is an $n$-dimensional level $\sigma$-coloring of $2^{<\omega}$.
 

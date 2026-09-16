@@ -1,8 +1,8 @@
-# &#916;-similarity
+# &#916;-Similarity
 
 ## The &#916;-Similarity Relation
 
-$\Delta$-congruence remembers the actual levels at which the branches split, and now we want to define the coarser relation of $\Delta$-similarity that looks instead only at the relative pattern of the splitting levels: which split occurs first, which occurs next, and so on.  The ideas here appear first in [B].  
+$\Delta$-congruence remembers the actual levels at which the branches split, and now we want to define a coarser relation,  $\Delta$-similarity, that looks instead only at the relative pattern of the splitting levels: which split occurs first, which occurs next, and so on.  The ideas here appear first in [B].  
 
 !!! definition "$\Delta$-Similarity"
 
