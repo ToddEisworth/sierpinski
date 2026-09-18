@@ -1,4 +1,4 @@
-## The forcing
+#The forcing
 
 Fix a winning strategy $\Sigma$ for Player I. A finite approximation is a triple
 

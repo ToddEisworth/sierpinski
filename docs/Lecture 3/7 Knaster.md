@@ -1,3 +1,5 @@
+#Sketch of Argument
+
 For every $\gamma<\omega_1$, the set
 
 $$
